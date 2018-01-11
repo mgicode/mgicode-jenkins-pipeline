@@ -1,0 +1,57 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{COMMON_NAME}}-controller
+spec:
+  replicas: {{REPEAT_COUNT}}
+  template:
+    metadata:
+      name: {{COMMON_NAME}}
+      labels:
+        app: {{COMMON_NAME}}
+      #namespace: kube-system
+    spec:
+      #serviceAccountName: api-gateway
+      #hostNetwork: true
+      #nodeSelector:
+         #zoneGw: '1'
+         #kubernetes.io/hostname: "10.1.12.24"
+      containers:
+      - name: {{COMMON_NAME}}
+        imagePullPolicy: Always
+        image: {{IMAGES_ADDR}}
+        #livenessProbe:
+          #httpGet:
+             #path: /health
+             #port: {{HTTP_PORT}}
+             #scheme: HTTP
+          #initialDelaySeconds: 60
+          #timeoutSeconds: 5
+          #successThreshold: 1
+          #failureThreshold: 5
+        ports:
+        - containerPort: {{HTTP_PORT}}
+          #hostPort: {{HTTP_PORT}}
+          name: http
+        env:
+          - name: MS_ALL_CONF
+            valueFrom:
+              configMapKeyRef:
+                name: {{COMMON_NAME}}-config
+                key: MS_ALL_CONF
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{COMMON_NAME}}-svc
+  labels:
+    app: {{COMMON_NAME}}-svc
+spec:
+  #type: NodePort
+  ports:
+    - name: http
+      port:  {{HTTP_PORT}}
+      targetPort:  {{HTTP_PORT}}
+  selector:
+    app: {{COMMON_NAME}}
