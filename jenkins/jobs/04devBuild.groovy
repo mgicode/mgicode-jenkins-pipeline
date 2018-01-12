@@ -8,14 +8,14 @@ pipeline {
     stages {
         stage('检出配置作业') {
             steps {
-                git branch: 'master', credentialsId: '0a2f41d3-8b08-4c3c-b962-2444ae0fbb22', url: 'http://10.1.12.92/pengrk/jenkins-jobs.git'
+                git branch: 'master', credentialsId: 'e11c379e-a04f-4880-b0b8-cf82eee2a91c', url: 'http://10.1.12.92/pengrk/jenkins-jobs.git'
                 sh "cd .. ; rm -rf jenkins-job/;  mkdir -p jenkins-job/jenkins/; echo ${WORKSPACE} "
                 sh "cp  -rf jenkins/*  ../jenkins-job/jenkins/ ;  ls -l ../jenkins-job/jenkins/"
             }
         }
         stage('检出代码') {
             steps {
-                git branch: 'master', credentialsId: '0a2f41d3-8b08-4c3c-b962-2444ae0fbb22', url: 'http://10.1.12.92/pengrk/ms-echo.git'
+                git branch: 'dev', credentialsId: 'e11c379e-a04f-4880-b0b8-cf82eee2a91c', url: 'http://10.1.12.92/pengrk/ms-test.git'
                 sh "cp  -rf ../jenkins-job/jenkins   jenkins  ; ls -l jenkins/"
             }
         }
@@ -65,7 +65,7 @@ pipeline {
 
         stage('构建k8s配置') {
             steps {
-                sshagent(['4c7efd25-a02e-422a-880d-55e0729dcd8f']) {
+                sshagent(['c1f710ff-ca06-4e79-9043-1d112ddfe4ce']) {
                     sh ' chmod 777 ./jenkins/scripts/k8sconfig.sh ; ./jenkins/scripts/k8sconfig.sh'
                 }
             }
@@ -73,7 +73,7 @@ pipeline {
 
         stage('部署镜像到k8s') {
             steps {
-                sshagent(['4c7efd25-a02e-422a-880d-55e0729dcd8f']) {
+                sshagent(['c1f710ff-ca06-4e79-9043-1d112ddfe4ce']) {
                     sh ' chmod 777 ./jenkins/scripts/k8sdeployhostNetwork.sh; ./jenkins/scripts/k8sdeployhostNetwork.sh '
                 }
             }
@@ -83,7 +83,7 @@ pipeline {
         stage('自动化接口测试') {
             agent {
                 docker {
-                    image '10.1.12.61:5000/postman/newman_alpine33'
+                    image '10.1.12.61:5000/newman'
                     reuseNode true
                 }
             }
