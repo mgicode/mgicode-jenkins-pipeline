@@ -8,14 +8,14 @@ pipeline {
     stages {
         stage('检出配置作业') {
             steps {
-                git branch: 'master', credentialsId: 'e11c379e-a04f-4880-b0b8-cf82eee2a91c', url: 'http://10.1.12.92/pengrk/jenkins-jobs.git'
+                git branch: 'master', credentialsId: '1a9c014b-0747-465f-b786-1fb2334f5d7f', url: 'http://10.1.12.92/pengrk/jenkins-jobs.git'
                 sh "cd .. ; rm -rf jenkins-job/;  mkdir -p jenkins-job/jenkins/; echo ${WORKSPACE} "
                 sh "cp  -rf jenkins/*  ../jenkins-job/jenkins/ ;  ls -l ../jenkins-job/jenkins/"
             }
         }
         stage('检出代码') {
             steps {
-                git branch: 'dev', credentialsId: 'e11c379e-a04f-4880-b0b8-cf82eee2a91c', url: 'http://10.1.12.92/pengrk/ms-test.git'
+                git branch: 'dev', credentialsId: '1a9c014b-0747-465f-b786-1fb2334f5d7f', url: 'http://10.1.12.92/pengrk/ms-test.git'
                 sh "cp  -rf ../jenkins-job/jenkins   jenkins  ; ls -l jenkins/"
             }
         }
@@ -41,8 +41,8 @@ pipeline {
         stage("静态代码检测") {
             steps {
                 //sh ' mvn sonar:sonar  -Dsonar.host.url=http://10.1.12.90:9000 -Dsonar.login=277a6a58a4ae62ab3cb9785a7dec54e719767597'
-                sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true  ;   mvn sonar:sonar  -Dsonar.host.url=http://10.1.12.90:9000 -Dsonar.login=277a6a58a4ae62ab3cb9785a7dec54e719767597            '
-
+               // sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true  ;   mvn sonar:sonar  -Dsonar.host.url=http://10.1.12.90:9000 -Dsonar.login=277a6a58a4ae62ab3cb9785a7dec54e719767597            '
+                 sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=true sonar:sonar  -Dsonar.host.url=http://10.1.12.40:9000 -Dsonar.login=277a6a58a4ae62ab3cb9785a7dec54e719767597'
             }
 //            post {
 //                always {
@@ -65,7 +65,7 @@ pipeline {
 
         stage('构建k8s配置') {
             steps {
-                sshagent(['c1f710ff-ca06-4e79-9043-1d112ddfe4ce']) {
+                sshagent(['06a9cda9-9af2-4d31-b8ca-2563c55d02ac']) {
                     sh ' chmod 777 ./jenkins/scripts/k8sconfig.sh ; ./jenkins/scripts/k8sconfig.sh'
                 }
             }
@@ -73,27 +73,27 @@ pipeline {
 
         stage('部署镜像到k8s') {
             steps {
-                sshagent(['c1f710ff-ca06-4e79-9043-1d112ddfe4ce']) {
+                sshagent(['06a9cda9-9af2-4d31-b8ca-2563c55d02ac']) {
                     sh ' chmod 777 ./jenkins/scripts/k8sdeployhostNetwork.sh; ./jenkins/scripts/k8sdeployhostNetwork.sh '
                 }
             }
         }
 
 
-        stage('自动化接口测试') {
-            agent {
-                docker {
-                    image '10.1.12.61:5000/newman'
-                    reuseNode true
-                }
-            }
-            steps {
-                // working directory will be /var/jenkins_home/workspace/ms-echo-dev-host-network not /var/jenkins_home/workspace/ms-echo-dev-host-network@2
-                // ${WORKSPACE%%@*}
-                sh ' newman --version ;  chmod 777  ./jenkins/scripts/k8sdeployhostNetworkAutoTest.sh ; ./jenkins/scripts/k8sdeployhostNetworkAutoTest.sh '
-
-            }
-        }
+//        stage('自动化接口测试') {
+//            agent {
+//                docker {
+//                    image '10.1.12.61:5000/newman'
+//                    reuseNode true
+//                }
+//            }
+//            steps {
+//                // working directory will be /var/jenkins_home/workspace/ms-echo-dev-host-network not /var/jenkins_home/workspace/ms-echo-dev-host-network@2
+//                // ${WORKSPACE%%@*}
+//                sh ' newman --version ;  chmod 777  ./jenkins/scripts/k8sdeployhostNetworkAutoTest.sh ; ./jenkins/scripts/k8sdeployhostNetworkAutoTest.sh '
+//
+//            }
+//        }
 
     }
 }
