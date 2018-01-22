@@ -15,10 +15,11 @@ echo  -e "#### init #######\n\n\n"
 
 MS_ALL_CONF=`echo "${1}" |sed "s/\//\\\\\\\\\//g"`
 
-k8sAddr="${2:-10.1.12.70}"
-k8sUser="${3:-root}"
-k8sPwd="${4:-root@123}"
-
+dockerPort="${2:-8080}"
+k8sAddr="${3:-10.1.12.50}"
+k8sUser="${4:-root}"
+k8sPwd="${5:-root@123}"
+dockerAddr="${6:-10.1.12.41:5000}"
 
 
 jarName=`mvn help:evaluate -Dexpression=project.name | grep "^[^\[]"`
@@ -34,7 +35,7 @@ rootDir=$(pwd)
 toPath=${rootDir}/target
 targetPath=${toPath}
 
-dockerAddr="${1:-10.1.12.61:5000}"
+
 dockerName=${jarNameVersion}
 dockerVersion=${jarVersion}
 dockerPath="${dockerAddr}/${dockerName}:${dockerVersion}"
@@ -65,6 +66,7 @@ cat > ${targetPath}/init_var.sh <<EOF
   export dockerName=${dockerName}
   export dockerVersion=${dockerVersion}
   export dockerPath=${dockerPath}
+  export dockerPort=${dockerPort}
 
 EOF
 
