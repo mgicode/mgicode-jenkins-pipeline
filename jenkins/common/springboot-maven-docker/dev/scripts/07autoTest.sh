@@ -3,7 +3,7 @@
 echo  -e "\n\n\n##################################################################"
 echo  -e "#####################  autoTest  start ################################"
 
-source $(pwd)/init_var.sh
+source $(pwd)/jenkins/init_var.sh
 #export
 
 init_after_autoTest_config="${projectConfigDir}/init_after_autoTest.properties"
@@ -22,13 +22,13 @@ do
   then
    echo ${line}
   else
-      echo " export $k=${v} " >> ${rootDir}/init_var.sh
+      echo " export $k=${v} " >> ${rootDir}/jenkins/init_var.sh
       echo " export $k=${v}"
    fi
 done < $init_after_autoTest_config
 fi
 
-source   ${rootDir}/init_var.sh
+source   ${rootDir}/jenkins/init_var.sh
 #export
 
 
@@ -52,6 +52,11 @@ curl http://$dockerServerIP:$dockerServerPort/
 
 echo  -e "\n\n#### 执行批量测试\n"
 newman run  ${projectAutoTestDir}/*_collection.json  --environment ${targetEnvironment}
+
+ temp=$?
+  if [[ $temp -ne 0 ]];
+  then exit  $temp
+ fi
 
 echo  -e "##################### autoTest end ################################"
 echo  -e "\n\n\n################################################################\n"

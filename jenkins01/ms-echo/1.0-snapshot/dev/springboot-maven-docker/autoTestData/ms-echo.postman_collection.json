@@ -1,0 +1,120 @@
+{
+	"info": {
+		"name": "ms-echo",
+		"_postman_id": "bceecc42-d3a7-31ee-8d0e-76a065032f73",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hello",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e55ecf95-449e-4eaa-b36f-82de25dffacf",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.test(\"contentAssert is ok\", function () {",
+							"   pm.expect(pm.response.text()).to.include(\"world\")",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{ip}}:{{port}}/hello",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"hello"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65e21da1-6430-4c70-8f6a-846e846bfa12",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"contentAssert is ok\", function () {",
+							"   pm.expect(pm.response.text()).to.include(\"test\")",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{ip}}:{{port}}/test",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"test"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "unittest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7263e716-f877-4366-9d9f-16075cb3ebdc",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.test(\"contentAssert is ok\", function () {",
+							"   pm.expect(pm.response.text()).to.include(\"aaa\")",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{ip}}:{{port}}/unittest",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"unittest"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

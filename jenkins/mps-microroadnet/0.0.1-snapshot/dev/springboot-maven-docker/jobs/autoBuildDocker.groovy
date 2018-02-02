@@ -1,3 +1,5 @@
+
+
 pipeline {
     environment {
         //该变量使用不了
@@ -18,7 +20,6 @@ pipeline {
 
 //        SONAR_IP_PORT='http://10.1.12.40:9000'
 //        SONAR_CREDENTIALSID="277a6a58a4ae62ab3cb9785a7dec54e719767597"
-
 
     }
     agent {

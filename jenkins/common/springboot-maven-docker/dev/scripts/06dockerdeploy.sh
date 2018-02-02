@@ -3,7 +3,7 @@
 echo  -e "\n\n\n##################################################################"
 echo  -e "##################### dockerDeploy start ################################"
 
-source $(pwd)/init_var.sh
+source $(pwd)/jenkins/init_var.sh
 #export
 
 init_after_dockerdeploy_config="${projectConfigDir}/init_after_dockerdeploy.properties"
@@ -21,17 +21,16 @@ do
   then
    echo ${line}
   else
-      echo " export $k=${v} " >> ${rootDir}/init_var.sh
+      echo " export $k=${v} " >> ${rootDir}/jenkins/init_var.sh
       echo " export $k=${v}"
    fi
 done < $init_after_dockerdeploy_config
 fi
 
-source   ${rootDir}/init_var.sh
+source   ${rootDir}/jenkins/init_var.sh
 #export
 
 #ALL_CONF=`echo "${MS_ALL_CONF}" |sed "s/\//\\\\\\\\\//g"`
-
 #MYSQL_URL=`echo "${MYSQL_URL}" |sed "s/\//\\\\\\\\\//g"`
 
  echo "MSNAME:${jarNameVersion}, HTTPPORT:${dockerServerPort}..."
@@ -42,7 +41,7 @@ source   ${rootDir}/init_var.sh
   #一定要清除原有镜像，不然不会拉
   docker rmi  -f ${dockerPath} ;
   docker run -d   --name ${jarNameVersion}  --restart=always     -p  ${dockerServerPort}:${dockerServerPort} \
-    -e  MS_ALL_CONF=\" -Dspring.application.name=${jarNameLower} \
+    -e  MS_ALL_CONF=\"
    -Dserver.port=${dockerServerPort} \
    -Dendpoints.health.sensitive=false \
    -Dmanagement.security.enabled=false  \
@@ -53,7 +52,6 @@ source   ${rootDir}/init_var.sh
    -Dspring.cloud.consul.discovery.enabled=true   \
    -Dspring.cloud.consul.discovery.hostname=${dockerServerIP}   \
    -Dspring.cloud.consul.discovery.port=${dockerServerPort}   \
-   -Dspring.cloud.consul.discovery.serviceName=${jarNameLower}   \
    -Dspring.cloud.consul.host=${CONSUL_IP}     \
    -Dspring.cloud.consul.port=${CONSUL_PORT}      \
    -Dspring.cloud.consul.discovery.healthCheckUrl=http://${dockerServerIP}:${dockerServerPort}/health \
@@ -62,6 +60,9 @@ source   ${rootDir}/init_var.sh
    docker logs ${jarNameVersion}
 
   "
+   #-Dspring.cloud.consul.discovery.serviceName=${jarNameLower}   \
+   #-Dspring.application.name=${jarNameLower} \
+
 
 #-Dserver.port=8020
 #--endpoints.health.sensitive=false \
@@ -90,6 +91,10 @@ source   ${rootDir}/init_var.sh
   sleep 5
   ssh $dockerServerUser@$dockerServerIP "${execScript}"
 
+ temp=$?
+  if [[ $temp -ne 0 ]];
+  then exit  $temp
+ fi
 
 echo  -e "##################### dockerDeploy end ################################"
 echo  -e "\n\n\n################################################################\n"

@@ -2,7 +2,7 @@
 echo  -e "\n\n\n##################################################################"
 echo  -e "##################### dockerBuild  start ################################"
 
-source $(pwd)/init_var.sh
+source $(pwd)/jenkins/init_var.sh
 #export
 
 init_after_dockerbuild_config="${projectConfigDir}/init_after_dockerbuild.properties"
@@ -22,13 +22,13 @@ do
   then
    echo ${line}
   else
-      echo " export $k=${v} " >> ${rootDir}/init_var.sh
+      echo " export $k=${v} " >> ${rootDir}/jenkins/init_var.sh
       echo " export $k=${v}"
    fi
 done < $init_after_dockerbuild_config
 fi
 
-source   ${rootDir}/init_var.sh
+source   ${rootDir}/jenkins/init_var.sh
 #export
 
 templateDir=${commonConfigBaseDir}/template/docker
@@ -67,10 +67,19 @@ cd  ${targetPath}/
 
 echo "\n\n####构建${dockerPath}\n\n\n."
 docker build -t ${dockerPath}  -f ${targetDockerfile}  ${targetPath}/
+ temp=$?
+  if [[ $temp -ne 0 ]];
+  then exit  $temp
+ fi
 
 
 echo "\n\n####上传到docker habor\n\n\n"
 docker push ${dockerPath}
+ temp=$?
+  if [[ $temp -ne 0 ]];
+  then exit  $temp
+ fi
+
 
 echo  -e "##################### dockerBuild  end ################################"
 echo  -e "###########################################################\n\n\n"

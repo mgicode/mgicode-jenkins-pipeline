@@ -2,7 +2,7 @@
 echo  -e "\n\n\n##################################################################"
 echo  -e "##################### 静态代码检测  start ################################"
 
-source $(pwd)/init_var.sh
+source $(pwd)/jenkins/init_var.sh
 
 init_after_staticcheck_config="${projectConfigDir}/init_after_staticcheck.properties"
 
@@ -21,13 +21,13 @@ do
   then
    echo ${line}
   else
-      echo " export $k=${v} " >> ${rootDir}/init_var.sh
+      echo " export $k=${v} " >> ${rootDir}/jenkins/init_var.sh
       echo " export $k=${v}"
    fi
 done < $init_after_staticcheck_config
 fi
 
-source   ${rootDir}/init_var.sh
+source   ${rootDir}/jenkins/init_var.sh
 #export
 
 
@@ -38,6 +38,10 @@ mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent  \
 install -Dmaven.test.failure.ignore=true sonar:sonar   \
 -Dsonar.host.url=${SONAR_IP_PORT} -Dsonar.login=${SONAR_CREDENTIALSID}
 
+ temp=$?
+  if [[ $temp -ne 0 ]];
+  then exit  $temp
+  fi
 
 echo  -e "##################### 静态代码检测  end ################################"
 echo  -e "###########################################################\n\n\n"

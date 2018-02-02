@@ -113,5 +113,23 @@ pipeline {
         }
 
     }
+    post {
+
+        failure {
+            jiraNewIssue site: 'http://10.1.12.52:20012/', issue:
+                    [fields: [
+                            assignee:[name:'${ASSIGNEE_NAME}'],
+                            project: [key: 'TEST'],
+                            summary: 'New JIRA Created from Jenkins.',
+                            description: 'New JIRA Created from Jenkins.',
+                            issuetype: [name: 'Bug']]]
+            //response = jiraNewIssue issue: testIssue
+            //echo response.successful.toString()
+            //echo response.data.toString()
+            // jiraNewIssue site: 'http://10.1.12.52:20012/', issue: testIssue
+            //jiraAssignIssue idOrKey: 'test', site: 'http://10.1.12.52:20012/', userName: 'root'
+
+        }
+    }
 }
 

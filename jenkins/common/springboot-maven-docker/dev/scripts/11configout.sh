@@ -28,7 +28,7 @@ function getdir(){
     done
 }
 
-getdir ../jenkins-job/jenkins/
+#getdir ../jenkins-job/jenkins/
 
 echo  -e "##################### 备份配置脚本  end ################################"
 echo  -e "###########################################################\n\n\n"
