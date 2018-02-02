@@ -1,0 +1,67 @@
+{
+	"id": "3553a600-239c-eff4-2a02-1096226c38c3",
+	"name": "test",
+	"description": "",
+	"order": [
+		"cc2ef89c-c63f-5589-5b35-d9c0385c5667"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1516953260075,
+	"owner": 0,
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "cc2ef89c-c63f-5589-5b35-d9c0385c5667",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/detail?pkid=5",
+			"queryParams": [
+				{
+					"key": "pkid",
+					"value": "5",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d75f91b6-140a-4e0f-a263-5ad3a3f37d7a",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"connection result is valid\"] = (postman.getResponseHeader('connection') === 'keep-alive');",
+							"tests[\"content-type result is valid\"] = (postman.getResponseHeader('content-type') === 'application/json;charset=UTF-8');",
+							"tests[\"transfer-encoding result is valid\"] = (postman.getResponseHeader('transfer-encoding') === 'chunked');",
+							"",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"auth": null,
+			"time": 1516956399262,
+			"name": "pkid",
+			"description": "",
+			"collectionId": "3553a600-239c-eff4-2a02-1096226c38c3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\n\ntests[\"connection result is valid\"] = (postman.getResponseHeader('connection') === 'keep-alive');\ntests[\"content-type result is valid\"] = (postman.getResponseHeader('content-type') === 'application/json;charset=UTF-8');\ntests[\"transfer-encoding result is valid\"] = (postman.getResponseHeader('transfer-encoding') === 'chunked');\n\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}

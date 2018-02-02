@@ -1,0 +1,6921 @@
+{
+	"id": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+	"name": "路段管理业务微服务",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"name": "修改路段信息",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"order": [
+				"5c28c819-4bf0-d9d4-7375-058752c3f5cb",
+				"697698b6-4b2f-4ff1-4277-ff2dfa6cca2e",
+				"a88bd0ed-44cf-df1f-a109-99df8245a918",
+				"1675defa-58ef-284a-2d57-cae38aaac007",
+				"67850425-2fde-ffad-8f58-6baa9fb97f70",
+				"4140a052-cdfd-dea4-cf4e-964299a45d5f",
+				"8cc93b11-c2b9-7af5-2a52-23914107fc40",
+				"990b2edc-0f5a-24b6-bfb9-3ebe5159dbef",
+				"2f4afde9-7069-f5d3-5895-8b2eeea444e9",
+				"fc77adb8-94e8-a672-3bc3-c044b4ed19e7",
+				"361a0cec-6f1a-7683-671b-641f08fec2f7",
+				"9f8a1330-b1bd-d81b-22a1-597ae274fa9c",
+				"74b4f416-e3f2-6950-1a16-8f1ffb0cb2e6",
+				"141fc225-2cf4-e261-fe99-dc0aad2e5695",
+				"d39f335b-d892-5cd8-b83a-c30a5089b64f",
+				"259aa8f0-992f-748c-ca7e-88a5eb35a83b",
+				"20f04d5e-3d74-c288-bf7f-47a10c9078a4"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"auth": null,
+			"id": "fee36f76-0c8f-956a-29c7-d4653f9d4baf"
+		},
+		{
+			"name": "删除路段",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"order": [
+				"46fd861a-0f9f-7473-501b-9ce583245711",
+				"c90b84da-84d0-6002-8060-578f921365f2",
+				"c38b403b-b929-dfe8-724d-1120e395c6ba"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"auth": null,
+			"id": "87294765-db62-294b-2447-6df8455a0557"
+		},
+		{
+			"name": "新增路段",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"order": [
+				"8e1f4a64-0950-d7fb-5c35-4e232cdf4fb9",
+				"8ff87870-33d9-9b5b-8e98-424776687e6c",
+				"7e74e907-3b33-bd04-2c33-e5e3376a116b",
+				"44ce4c34-e548-73a8-a809-67c99cdc19c1",
+				"1d63b8f5-8954-07a5-55f1-a326d9d5a6e8",
+				"e85fa661-0710-2ce8-0ac8-6552eb7b1dd5",
+				"0724bf99-17e2-3f06-51f3-68fb635cb860",
+				"b7e1e506-6ad5-7137-f054-dde48fb6535e",
+				"2bbe4903-5d59-873c-462c-5101f4d81fb9",
+				"48352c46-8e12-fd46-ff14-6176251feaa4",
+				"4af9c954-cf25-3e5e-2182-43808c1a6d51",
+				"77ba60e7-db48-3f57-debb-53483db0b769",
+				"404d6afe-3516-e779-0fbe-43332a4c047d",
+				"f21e9c23-66e1-0718-0ad8-1c8612f43b91",
+				"aac938c8-3164-ff51-75b1-c89662c34252",
+				"41ee32f1-d99f-3cea-f242-b398646abc09",
+				"59c43c35-ea13-f798-7491-2e73d4034b77",
+				"bbd6cc66-d4fa-3067-bb21-2c256cc367b7",
+				"f89e7bba-76eb-5ba7-6671-bcb4662e5d3d",
+				"6aa582ce-00f5-ee17-f311-1b68cded1f46",
+				"fc270bfe-c98f-9bf7-a2c9-048eff5bbb56",
+				"56c87ea4-a691-2f9f-932a-e64ab4b60134",
+				"55955401-f4a7-fe32-4fa1-73c2866e9ca1",
+				"8dcb2cde-f7d7-072b-aedf-87de4c3da889"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"auth": null,
+			"id": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57"
+		},
+		{
+			"name": "检查路段编码是否存在",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"order": [
+				"c86221b4-65ea-e38f-4e9e-737ea07e41ca",
+				"6f557b91-2a8b-2e63-5808-e1c3b7b3533c",
+				"2653c935-640a-a4f5-1778-ad9979712fdf",
+				"a4f3dc77-2c99-ef0f-2dff-ef68b994bc13",
+				"ef0de2b2-bede-aa6c-30a1-49fc239cb9c3"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"auth": null,
+			"id": "e9f233b4-50e8-80fe-5367-e96dfe25a008"
+		},
+		{
+			"name": "路段分页查询列表",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"order": [
+				"0255e767-ebd0-f01d-3278-1260366ad1a7",
+				"abecac21-2512-4bf9-cfe6-a61fc816d4a6",
+				"8ac401fa-be09-fcc3-bc83-d03ba27183c0",
+				"d6c807bc-af32-e6d8-9d8f-a05917865c91",
+				"2081f1bc-1393-646b-069f-b3d9d07f2c1d"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"auth": null,
+			"id": "59a846c1-89b2-d423-8ca4-2baf72d11072"
+		},
+		{
+			"name": "返回路段信息",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"order": [
+				"7d170675-eb3f-b4db-077c-cc0c24ff3f14",
+				"e22f1f25-649d-fffe-6b56-13ceafdcb6d4",
+				"16a5f362-4ec0-5940-a27d-eb6236644988"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"auth": null,
+			"id": "a67a2aa4-d638-ddec-ac67-9ad1cca2aaf4"
+		}
+	],
+	"folders_order": [
+		"0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+		"e9f233b4-50e8-80fe-5367-e96dfe25a008",
+		"87294765-db62-294b-2447-6df8455a0557",
+		"a67a2aa4-d638-ddec-ac67-9ad1cca2aaf4",
+		"59a846c1-89b2-d423-8ca4-2baf72d11072",
+		"fee36f76-0c8f-956a-29c7-d4653f9d4baf"
+	],
+	"timestamp": 1517204945364,
+	"owner": 0,
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "0255e767-ebd0-f01d-3278-1260366ad1a7",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/list?page=1&size=10",
+			"folder": "59a846c1-89b2-d423-8ca4-2baf72d11072",
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "size",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00d717ab-a421-46fd-a97c-d19275eaf37e",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517215931915,
+			"name": "page=1&size=10",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "0724bf99-17e2-3f06-51f3-68fb635cb860",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517210983042,
+			"name": "countrynetcode=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "141fc225-2cf4-e261-fe99-dc0aad2e5695",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13141111",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 17:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "60",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "2",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217360073,
+			"name": "businessnaturecode=2",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "1675defa-58ef-284a-2d57-cae38aaac007",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217033839,
+			"name": "provincenetcode=省内路网编码004",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "16a5f362-4ec0-5940-a27d-eb6236644988",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/detail",
+			"folder": "a67a2aa4-d638-ddec-ac67-9ad1cca2aaf4",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00ea89d9-d545-4cf4-b4c0-298714b759a3",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517215295346,
+			"name": "pkid=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "1d63b8f5-8954-07a5-55f1-a326d9d5a6e8",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517210626579,
+			"name": "provincenetfullname=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "2081f1bc-1393-646b-069f-b3d9d07f2c1d",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/list?page=1&size=s10",
+			"folder": "59a846c1-89b2-d423-8ca4-2baf72d11072",
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "size",
+					"value": "s10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee2512d1-e400-4b1c-89fe-e8b87ac6010d",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517216121554,
+			"name": "page=1&size=s10",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "20f04d5e-3d74-c288-bf7f-47a10c9078a4",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13141111",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 17:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "60",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "2",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 17:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 17:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217446312,
+			"name": "datalastupdatetime=2018-01-29 17:14:30",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "259aa8f0-992f-748c-ca7e-88a5eb35a83b",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13141111",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 17:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "60",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "2",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 17:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217425289,
+			"name": "datacreatetime=2018-01-29 17:04:30",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "2653c935-640a-a4f5-1778-ad9979712fdf",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/checkByNetId?netid=001",
+			"folder": "e9f233b4-50e8-80fe-5367-e96dfe25a008",
+			"queryParams": [
+				{
+					"key": "netid",
+					"value": "001",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ca6db9d0-2ff6-40b0-b799-c96957150314",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517212468924,
+			"name": "netid=001",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "2bbe4903-5d59-873c-462c-5101f4d81fb9",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211175028,
+			"name": "countrynetshortname=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "2f4afde9-7069-f5d3-5895-8b2eeea444e9",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13141111",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217208479,
+			"name": "constructionmileage=13141111",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "361a0cec-6f1a-7683-671b-641f08fec2f7",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13141111",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 17:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217285848,
+			"name": "minibusspeedlimit=100",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "404d6afe-3516-e779-0fbe-43332a4c047d",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211335614,
+			"name": "largebusspeedlimit=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "4140a052-cdfd-dea4-cf4e-964299a45d5f",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217102199,
+			"name": "provincenetshortname=国家路网编码004",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "41ee32f1-d99f-3cea-f242-b398646abc09",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211428853,
+			"name": "remarks=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "44ce4c34-e548-73a8-a809-67c99cdc19c1",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6531d930-e044-4d43-bc19-d0fe2ac4d598",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517210433308,
+			"name": "provincenetcode=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "46fd861a-0f9f-7473-501b-9ce583245711",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/delete",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f8e48581-90f9-43aa-9fa8-47a71ab3c9c0",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [
+				{
+					"key": "pkid",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517212858869,
+			"name": "pkid=1",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "48352c46-8e12-fd46-ff14-6176251feaa4",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211225533,
+			"name": "constructionmileage=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "4af9c954-cf25-3e5e-2182-43808c1a6d51",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211256453,
+			"name": "trafficdate=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "55955401-f4a7-fe32-4fa1-73c2866e9ca1",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:02:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit",
+					"value": "aabbcc",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:06:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:16:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211959134,
+			"name": "truckspeedlimit=aabbcc",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "56c87ea4-a691-2f9f-932a-e64ab4b60134",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:02:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "aabbcc",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:06:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:16:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211927183,
+			"name": "largebusspeedlimit=aabbcc",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "59c43c35-ea13-f798-7491-2e73d4034b77",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211496452,
+			"name": "datacreatetime=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "5c28c819-4bf0-d9d4-7375-058752c3f5cb",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517216911063,
+			"name": "netid=004",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "67850425-2fde-ffad-8f58-6baa9fb97f70",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217063951,
+			"name": "provincenetfullname=省内路网004",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "697698b6-4b2f-4ff1-4277-ff2dfa6cca2e",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517216955744,
+			"name": "sectionname=测试路段004",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "6aa582ce-00f5-ee17-f311-1b68cded1f46",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "abc13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:02:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:06:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:16:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211732777,
+			"name": "constructionmileage=abc13140000",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "6f557b91-2a8b-2e63-5808-e1c3b7b3533c",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/checkByNetId?pkid=1",
+			"folder": "e9f233b4-50e8-80fe-5367-e96dfe25a008",
+			"queryParams": [
+				{
+					"key": "pkid",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b17abf1-2139-42ae-a2e9-ef2cd200a5d3",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517212632828,
+			"name": "pkid=1",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "74b4f416-e3f2-6950-1a16-8f1ffb0cb2e6",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13141111",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 17:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "60",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217316503,
+			"name": "truckspeedlimit=60",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "77ba60e7-db48-3f57-debb-53483db0b769",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211286541,
+			"name": "minibusspeedlimit=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "7d170675-eb3f-b4db-077c-cc0c24ff3f14",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/detail?pkid=2",
+			"folder": "a67a2aa4-d638-ddec-ac67-9ad1cca2aaf4",
+			"queryParams": [
+				{
+					"key": "pkid",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f8e48581-90f9-43aa-9fa8-47a71ab3c9c0",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "pkid",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517215249824,
+			"name": "pkid=2",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "7e74e907-3b33-bd04-2c33-e5e3376a116b",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2934fc29-3351-467b-b7f5-3708294a000e",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217921883,
+			"name": "sectionname=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "8ac401fa-be09-fcc3-bc83-d03ba27183c0",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/list?size=10",
+			"folder": "59a846c1-89b2-d423-8ca4-2baf72d11072",
+			"queryParams": [
+				{
+					"key": "size",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ca6db9d0-2ff6-40b0-b799-c96957150314",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517216058852,
+			"name": "size=10",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "8cc93b11-c2b9-7af5-2a52-23914107fc40",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217139171,
+			"name": "countrynetfullname=国家路网004",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "8dcb2cde-f7d7-072b-aedf-87de4c3da889",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:02:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "aabbcc",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:06:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:16:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517212009920,
+			"name": "businessnaturecode=aabbcc",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "8e1f4a64-0950-d7fb-5c35-4e232cdf4fb9",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517208777975,
+			"name": "all required",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "8ff87870-33d9-9b5b-8e98-424776687e6c",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8654c83a-3b1d-4cd9-b04b-d2c83c3ea72b",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217916322,
+			"name": "netid=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "990b2edc-0f5a-24b6-bfb9-3ebe5159dbef",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217184391,
+			"name": "countrynetshortname=GJLW004",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "9f8a1330-b1bd-d81b-22a1-597ae274fa9c",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13141111",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 17:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217299959,
+			"name": "largebusspeedlimit=80",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "a4f3dc77-2c99-ef0f-2dff-ef68b994bc13",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/checkByNetId?pkid=p1&netid=001",
+			"folder": "e9f233b4-50e8-80fe-5367-e96dfe25a008",
+			"queryParams": [
+				{
+					"key": "pkid",
+					"value": "p1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "netid",
+					"value": "001",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee2512d1-e400-4b1c-89fe-e8b87ac6010d",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517212531037,
+			"name": "pkid=p1&netid=001",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "a88bd0ed-44cf-df1f-a109-99df8245a918",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW001",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217010862,
+			"name": "sectionshortname=LD004",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "aac938c8-3164-ff51-75b1-c89662c34252",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211404260,
+			"name": "businessnaturecode=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "abecac21-2512-4bf9-cfe6-a61fc816d4a6",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/list?page=1",
+			"folder": "59a846c1-89b2-d423-8ca4-2baf72d11072",
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b17abf1-2139-42ae-a2e9-ef2cd200a5d3",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517215984636,
+			"name": "page=1",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "b7e1e506-6ad5-7137-f054-dde48fb6535e",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211125900,
+			"name": "countrynetfullname=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "bbd6cc66-d4fa-3067-bb21-2c256cc367b7",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211522340,
+			"name": "datalastupdatetime=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "c38b403b-b929-dfe8-724d-1120e395c6ba",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/delete",
+			"folder": "87294765-db62-294b-2447-6df8455a0557",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00ea89d9-d545-4cf4-b4c0-298714b759a3",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517214301072,
+			"name": "pkid=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "c86221b4-65ea-e38f-4e9e-737ea07e41ca",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/checkByNetId?pkid=1&netid=001",
+			"folder": "e9f233b4-50e8-80fe-5367-e96dfe25a008",
+			"queryParams": [
+				{
+					"key": "pkid",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "netid",
+					"value": "001",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00d717ab-a421-46fd-a97c-d19275eaf37e",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517212334941,
+			"name": "pkid=1&netid=001",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "c90b84da-84d0-6002-8060-578f921365f2",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/delete",
+			"folder": "87294765-db62-294b-2447-6df8455a0557",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00ea89d9-d545-4cf4-b4c0-298714b759a3",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [
+				{
+					"key": "pkid",
+					"value": "aabbcc",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517213935633,
+			"name": "pkid=aabbcc",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "d39f335b-d892-5cd8-b83a-c30a5089b64f",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13141111",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 17:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "60",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "2",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217386632,
+			"name": "remarks=测试路段004",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "d6c807bc-af32-e6d8-9d8f-a05917865c91",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/list?page=p1&size=10",
+			"folder": "59a846c1-89b2-d423-8ca4-2baf72d11072",
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "p1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "size",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee2512d1-e400-4b1c-89fe-e8b87ac6010d",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517216105203,
+			"name": "page=p1&size=10",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "e22f1f25-649d-fffe-6b56-13ceafdcb6d4",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/detail?pkid=aabbcc",
+			"folder": "a67a2aa4-d638-ddec-ac67-9ad1cca2aaf4",
+			"queryParams": [
+				{
+					"key": "pkid",
+					"value": "aabbcc",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "00ea89d9-d545-4cf4-b4c0-298714b759a3",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "pkid",
+					"value": "aabbcc",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517215280353,
+			"name": "pkid=aabbcc",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "e85fa661-0710-2ce8-0ac8-6552eb7b1dd5",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517210688626,
+			"name": "provincenetshortname=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "ef0de2b2-bede-aa6c-30a1-49fc239cb9c3",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/checkByNetId?pkid=1&netid=n001",
+			"folder": "e9f233b4-50e8-80fe-5367-e96dfe25a008",
+			"queryParams": [
+				{
+					"key": "pkid",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "netid",
+					"value": "n001",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee2512d1-e400-4b1c-89fe-e8b87ac6010d",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"auth": null,
+			"time": 1517212581077,
+			"name": "pkid=1&netid=n001",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "f21e9c23-66e1-0718-0ad8-1c8612f43b91",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW002",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:01:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:05:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:15:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211374436,
+			"name": "truckspeedlimit=null",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "f89e7bba-76eb-5ba7-6671-bcb4662e5d3d",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "路段003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:02:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:06:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:16:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217908170,
+			"name": "netid=路段003",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "fc270bfe-c98f-9bf7-a2c9-048eff5bbb56",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/add",
+			"folder": "0c1b0fb3-fcac-24af-1b24-d5860c0ade57",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3eb8d42-288e-47aa-b964-20f8e362baf8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 400\"] =responseBody.has(\"400\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW003",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13140000",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 14:02:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "aabbcc",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:06:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:16:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517211897563,
+			"name": "minibusspeedlimit=aabbcc",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 400\"] =responseBody.has(\"400\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "fc77adb8-94e8-a672-3bc3-c044b4ed19e7",
+			"headers": "",
+			"headerData": [],
+			"url": "http://{{ip}}:{{port}}/roadnet/update",
+			"folder": "fee36f76-0c8f-956a-29c7-d4653f9d4baf",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d51e40c-247c-4bc1-8dee-d3f570c41700",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"response code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+							"tests[\"Body matches string code is 200\"] =responseBody.has(\"200\");",
+							"tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+							"tests[\"Body matches string message\"] =responseBody.has(\"message\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "netid",
+					"value": "004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionname",
+					"value": "测试路段004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sectionshortname",
+					"value": "LD004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetcode ",
+					"value": "省内路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetfullname",
+					"value": "省内路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "provincenetshortname",
+					"value": "SNLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetcode",
+					"value": "国家路网编码004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetfullname",
+					"value": "国家路网004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "countrynetshortname",
+					"value": "GJLW004",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "constructionmileage",
+					"value": "13141111",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "trafficdate",
+					"value": "2018-01-29 17:00:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "minibusspeedlimit",
+					"value": "120",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "largebusspeedlimit",
+					"value": "100",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "truckspeedlimit ",
+					"value": "80",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "businessnaturecode",
+					"value": "1",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "remarks",
+					"value": "测试路段",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datacreatetime",
+					"value": "2018-01-29 14:04:30",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "datalastupdatetime",
+					"value": "2018-01-29 14:14:30",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"auth": null,
+			"time": 1517217235831,
+			"name": "trafficdate=2018-01-29 17:00:30",
+			"description": "",
+			"collectionId": "f36d1aa3-eb55-8bd3-e79e-6c2175f35aa3",
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "tests[\"response code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string code\"] =responseBody.has(\"code\");\ntests[\"Body matches string code is 200\"] =responseBody.has(\"200\");\ntests[\"Body matches string data\"] =responseBody.has(\"data\");\ntests[\"Body matches string message\"] =responseBody.has(\"message\");",
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}

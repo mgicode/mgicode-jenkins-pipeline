@@ -1,0 +1,96 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{COMMON_NAME}}-config
+data:
+  JAR_ADDR:  {{JAR_ADDR}}{{JAR_NAME}}
+  HTTP_PORT: "{{HTTP_PORT}}"
+  THRIFT_PORT: "{{THRIFT_PORT}}"
+  startup.sh: |+
+      #!/bin/bash
+      set +e
+       #注意=前后不能有空格 #xargs,
+       export POD_IP=`/sbin/ifconfig -a | grep inet | grep -v 127.0.0.1 | grep -v inet6 | awk '{print \$2}' | tr -d "addr" `
+       echo " ############POD_IP     $POD_IP"
+      mkdir -p /microservice/
+      cd /microservice/
+      wget $JAR_ADDR
+      chmod 777 {{JAR_NAME}}
+      # hostnetwork中使用 --server.address=$POD_IP 网络访问不了
+      # --spring.profiles.active 用来读取不同的配置文件
+      java -jar -Xms256m  -Xmx512m  {{JAR_NAME}}   --server.port={{HTTP_PORT}}  --thrift.server.port={{THRIFT_PORT}}  --spring.profiles.active=test
+---
+
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: {{COMMON_NAME}}-controller
+spec:
+  replicas: {{REPEAT_COUNT}}
+  template:
+    metadata:
+      name: {{COMMON_NAME}}
+      labels:
+        app: {{COMMON_NAME}}
+    spec:
+      #serviceAccountName: api-gateway
+      hostNetwork: true
+      nodeSelector:
+         zoneGw: '1'
+         #kubernetes.io/hostname: "10.1.12.24"
+      containers:
+      - name: {{COMMON_NAME}}
+        imagePullPolicy: IfNotPresent
+        image: {{IMAGES_ADDR}}
+        livenessProbe:
+          httpGet:
+             path: /health
+             port: {{HTTP_PORT}}
+             scheme: HTTP
+          initialDelaySeconds: 60
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 5
+        ports:
+        - containerPort: {{HTTP_PORT}}
+          hostPort: {{HTTP_PORT}}
+          name: http
+        - containerPort: {{THRIFT_PORT}}
+          hostPort: {{THRIFT_PORT}}
+          name: thrift
+        command:
+          - bash
+          - "-c"
+          - |
+            set -e
+            chmod 777  /conf/startup.sh
+            /conf/startup.sh
+
+        env:
+          - name: JAR_ADDR
+            valueFrom:
+              configMapKeyRef:
+                name: {{COMMON_NAME}}-config
+                key: JAR_ADDR
+#          - name: "server.port"
+#            valueFrom:
+#              configMapKeyRef:
+#                name: {{COMMON_NAME}}-config
+#                key: HTTP_PORT
+#          - name: "thrift.server.port"
+#            valueFrom:
+#              configMapKeyRef:
+#                name: {{COMMON_NAME}}-config
+#                key: THRIFT_PORT
+        volumeMounts:
+        - name: conf
+          mountPath: /conf
+          readOnly: false
+      volumes:
+      - name: conf
+        configMap:
+          name: {{COMMON_NAME}}-config
+          items:
+          - key: startup.sh
+            path: startup.sh
+
