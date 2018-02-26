@@ -1,0 +1,3143 @@
+{
+  "info": {
+    "name": "系统菜单",
+    "_postman_id": "6c094a10-3e95-d457-a66d-ce3d7359a60d",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "新增系统菜单接口",
+      "description": "",
+      "item": [
+        {
+          "name": "新增一级菜单",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "f4d55b68-f7a2-438e-bcfc-5c6dac244da0",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"系统\");",
+                  "postman.setGlobalVariable(\"menushortname\",\"sys\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"\");",
+                  "postman.setGlobalVariable(\"menuparentid\",0);",
+                  "postman.setGlobalVariable(\"menufunc\",\"{}\");",
+                  "postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "200b84fb-6b38-45af-be2d-faed2a133150",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "postman.setGlobalVariable(\"sysmenu_syspkid\",sysmenu.data.pkid);",
+                  "",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+sysmenu.data.pkid, function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('menuname added success', function () {",
+                  "    pm.expect(jsondata.data.menuname+\"\").to.equal(pm.globals.get(\"menuname\")+\"\");",
+                  "   });",
+                  "    pm.test('menushortname added success', function () {",
+                  "    pm.expect(jsondata.data.menushortname+\"\").to.equal(pm.globals.get(\"menushortname\")+\"\");",
+                  "   });",
+                  "    pm.test('menuurl added success', function () {",
+                  "    pm.expect(jsondata.data.menuurl+\"\").to.equal(pm.globals.get(\"menuurl\")+\"\");",
+                  "   });",
+                  "    pm.test('menuparentid added success', function () {",
+                  "    pm.expect(jsondata.data.menuparentid+\"\").to.equal(pm.globals.get(\"menuparentid\")+\"\");",
+                  "   });",
+                  "    pm.test('menufunc added success', function () {",
+                  "    pm.expect(jsondata.data.menufunc+\"\").to.equal(pm.globals.get(\"menufunc\")+\"\");",
+                  "   });",
+                  "    pm.test('menusort added success', function () {",
+                  "    pm.expect(jsondata.data.menusort+\"\").to.equal(pm.globals.get(\"menusort\")+\"\");",
+                  "   });",
+                  "})"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/create/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "create",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "新增二级菜单",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "98bcb2a6-e1dd-4990-aafb-218e97ddad7b",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"数字路网\");",
+                  "postman.setGlobalVariable(\"menushortname\",\"roadnet\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8888\");",
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  "postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":0,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "0f9aeaee-7590-410a-b427-f4ab35631c9b",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "postman.setGlobalVariable(\"sysmenu_roadnetpkid\",sysmenu.data.pkid);",
+                  "",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+sysmenu.data.pkid, function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('menuname added success', function () {",
+                  "    pm.expect(jsondata.data.menuname+\"\").to.equal(pm.globals.get(\"menuname\")+\"\");",
+                  "   });",
+                  "    pm.test('menushortname added success', function () {",
+                  "    pm.expect(jsondata.data.menushortname+\"\").to.equal(pm.globals.get(\"menushortname\")+\"\");",
+                  "   });",
+                  "    pm.test('menuurl added success', function () {",
+                  "    pm.expect(jsondata.data.menuurl+\"\").to.equal(pm.globals.get(\"menuurl\")+\"\");",
+                  "   });",
+                  "    pm.test('menuparentid added success', function () {",
+                  "    pm.expect(jsondata.data.menuparentid+\"\").to.equal(pm.globals.get(\"menuparentid\")+\"\");",
+                  "   });",
+                  "//    pm.test('menufunc added success', function () {",
+                  "//    pm.expect(jsondata.data.menufunc+\"\").to.equal(pm.globals.get(\"menufunc\")+\"\");",
+                  "//   });",
+                  "    pm.test('menusort added success', function () {",
+                  "    pm.expect(jsondata.data.menusort+\"\").to.equal(pm.globals.get(\"menusort\")+\"\");",
+                  "   });",
+                  "})"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/create/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "create",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "新增三级菜单",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "1f334e39-47e6-40d3-9f1e-25ef7440783b",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"站点管理\");",
+                  "postman.setGlobalVariable(\"menushortname\",\"station\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8888\");",
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_roadnetpkid\"));",
+                  "postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "8cdc8b5a-a911-433f-b689-f0d1b4037292",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "postman.setGlobalVariable(\"sysmenu_stationpkid\",sysmenu.data.pkid);",
+                  "",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+sysmenu.data.pkid, function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('menuname added success', function () {",
+                  "    pm.expect(jsondata.data.menuname+\"\").to.equal(pm.globals.get(\"menuname\")+\"\");",
+                  "   });",
+                  "    pm.test('menushortname added success', function () {",
+                  "    pm.expect(jsondata.data.menushortname+\"\").to.equal(pm.globals.get(\"menushortname\")+\"\");",
+                  "   });",
+                  "    pm.test('menuurl added success', function () {",
+                  "    pm.expect(jsondata.data.menuurl+\"\").to.equal(pm.globals.get(\"menuurl\")+\"\");",
+                  "   });",
+                  "    pm.test('menuparentid added success', function () {",
+                  "    pm.expect(jsondata.data.menuparentid+\"\").to.equal(pm.globals.get(\"menuparentid\")+\"\");",
+                  "   });",
+                  "//    pm.test('menufunc added success', function () {",
+                  "//    pm.expect(jsondata.data.menufunc+\"\").to.equal(pm.globals.get(\"menufunc\")+\"\");",
+                  "//   });",
+                  "    pm.test('menusort added success', function () {",
+                  "    pm.expect(jsondata.data.menusort+\"\").to.equal(pm.globals.get(\"menusort\")+\"\");",
+                  "   });",
+                  "})"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":\"{{menuparentid}}\",\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/create/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "create",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "选填项menushortname不填",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "484a44d8-3eb4-44a6-b84f-be583ffb1c2f",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"站点人员管理\");",
+                  "//postman.setGlobalVariable(\"menushortname\",\"management\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8888?usid=1\");",
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "postman.setGlobalVariable(\"menusort\",2);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "aa38cc81-0f8e-4589-803d-0bc53cd06de5",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "postman.setGlobalVariable(\"sysmenu_managementpkid\",sysmenu.data.pkid);",
+                  "",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+sysmenu.data.pkid, function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('menuname added success', function () {",
+                  "    pm.expect(jsondata.data.menuname+\"\").to.equal(pm.globals.get(\"menuname\")+\"\");",
+                  "   });",
+                  "    pm.test('menushortname added success', function () {",
+                  "    pm.expect(jsondata.data.menushortname+\"\").to.equal(\"\");",
+                  "   });",
+                  "    pm.test('menuurl added success', function () {",
+                  "    pm.expect(jsondata.data.menuurl+\"\").to.equal(pm.globals.get(\"menuurl\")+\"\");",
+                  "   });",
+                  "    pm.test('menuparentid added success', function () {",
+                  "    pm.expect(jsondata.data.menuparentid+\"\").to.equal(pm.globals.get(\"menuparentid\")+\"\");",
+                  "   });",
+                  "//    pm.test('menufunc added success', function () {",
+                  "//    pm.expect(jsondata.data.menufunc+\"\").to.equal(pm.globals.get(\"menufunc\")+\"\");",
+                  "//   });",
+                  "    pm.test('menusort added success', function () {",
+                  "    pm.expect(jsondata.data.menusort+\"\").to.equal(pm.globals.get(\"menusort\")+\"\");",
+                  "   });",
+                  "})"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"menuname\":\"{{menuname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/create/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "create",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "选填项menusort不填",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "10647483-855a-4f90-921f-44a8f76007d6",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"站点收费额\");",
+                  "postman.setGlobalVariable(\"menushortname\",\"money\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8888?usid=1\");",
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":0,\\\"update\\\":1,\\\"add\\\":0,\\\"select\\\":1}\");",
+                  "//postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "782caacb-cf8e-4117-befc-a590bbfb6980",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "postman.setGlobalVariable(\"sysmenu_moneypkid\",sysmenu.data.pkid);",
+                  "",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+sysmenu.data.pkid, function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('menuname added success', function () {",
+                  "    pm.expect(jsondata.data.menuname+\"\").to.equal(pm.globals.get(\"menuname\")+\"\");",
+                  "   });",
+                  "    pm.test('menushortname added success', function () {",
+                  "    pm.expect(jsondata.data.menushortname+\"\").to.equal(pm.globals.get(\"menushortname\")+\"\");",
+                  "   });",
+                  "    pm.test('menuurl added success', function () {",
+                  "    pm.expect(jsondata.data.menuurl+\"\").to.equal(pm.globals.get(\"menuurl\")+\"\");",
+                  "   });",
+                  "    pm.test('menuparentid added success', function () {",
+                  "    pm.expect(jsondata.data.menuparentid+\"\").to.equal(pm.globals.get(\"menuparentid\")+\"\");",
+                  "   });",
+                  "//    pm.test('menufunc added success', function () {",
+                  "//    pm.expect(jsondata.data.menufunc+\"\").to.equal(pm.globals.get(\"menufunc\")+\"\");",
+                  "//   });",
+                  "    pm.test('menusort added success', function () {",
+                  "    pm.expect(jsondata.data.menusort+\"\").to.equal(\"1\");",
+                  "   });",
+                  "})"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/create/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "create",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "menuname唯一性验证",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "a95f66fa-ba5e-474b-9114-2241885c695e",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"系统\");",
+                  "postman.setGlobalVariable(\"menushortname\",\"system\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"/api/sys/menu/111\");",
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "f9f49e6f-c6d2-48a0-99f2-ad9b1ce2b6cc",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 400\"] = sysmenu.code === 400;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/create/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "create",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "menuname长度大于50",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "3d111f77-a3e6-497c-958f-6defbad066e2",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"站点区间10000000000000000000000000000000000000000000000\")",
+                  "postman.setGlobalVariable(\"menushortname\",\"station\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"/api/sys/menu/\");",
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "aba12f3e-5f05-4a0b-b4b0-d188eff233a7",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 400\"] = sysmenu.code === 400;",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/create/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "create",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "menuname输入为空",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c996c376-c6a1-42e3-94e1-d7c8ae7d4d29",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menushortname\",\"station\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"/api/sys/menu/\");",
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "e9c246d0-c82a-414f-8698-bbdb0c2b6b22",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 400\"] = sysmenu.code === 400;",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/create/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "create",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "menushortname长度大于30",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "83ca7c0c-206a-4766-b197-7c28574d3caa",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"站点附属设施\");",
+                  "postman.setGlobalVariable(\"menushortname\",\"facility10000000000000000000000\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"www\");",
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_roadnetpkid\"));",
+                  "postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "05797e15-1529-471e-9d83-97d15abdea55",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 400\"] = sysmenu.code === 400;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/create/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "create",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "menuurl长度大于300",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "22de4eed-5b58-46de-8e60-86a7f8c8d66d",
+                "type": "text/javascript",
+                "exec": [
+                  "const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+                  "postman.setGlobalVariable(\"menuname\",\"站点出入车辆统计\");",
+                  "postman.setGlobalVariable(\"menushortname\",\"out/in\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"当menuurl的长度大于30010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\");",
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_roadnetpkid\"));",
+                  "postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "5f1acfa9-4362-41ef-a656-4756a78a4db2",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 400\"] = sysmenu.code === 400;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/create/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "create",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "系统菜单删除接口",
+      "description": "",
+      "item": [
+        {
+          "name": "无子菜单",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "04c661c2-6178-49b5-952a-0b91a6d5723b",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_moneypkid\"));",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "e37f7bfe-38d7-4220-bd4d-0f9865e4c908",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"成功删除\"] = sysmenu.data.status === 1;",
+                  "tests[\"已删除系统菜单信息\"] = sysmenu.data.result === \"已删除系统菜单信息\";",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+pm.globals.get(\"sysmenu_moneypkid\"), function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('查询无此信息', function () {",
+                  "    pm.expect(jsondata.data).to.equal(null);",
+                  "   });",
+                  "});",
+                  "     "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/delete/{{pkid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "delete",
+                "{{pkid}}"
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "存在子菜单",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "d18b0cf8-dc78-457f-82eb-5fe5e29d2b02",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "e329c4a3-6123-45d5-a914-50f46bd664ea",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"删除失败\"] = sysmenu.data.status === 2;",
+                  "tests[\"该系统菜单下存在子级菜单\"] = sysmenu.data.result === \"该系统菜单下存在子级菜单\";",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+pm.globals.get(\"sysmenu_syspkid\"), function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('此信息存在', function () {",
+                  "    pm.expect(jsondata.data.pkid).to.equal(pm.globals.get(\"sysmenu_syspkid\"));",
+                  "   });",
+                  "});",
+                  "     "
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/delete/{{pkid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "delete",
+                "{{pkid}}"
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入不存在的pkid",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "2c2693a9-8805-42dc-be49-33a0872a85eb",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"pkid\",\"111000222\");",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "2a7baf4a-2c0a-49c5-b08c-498a10e8cf13",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/delete/{{pkid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "delete",
+                "{{pkid}}"
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "系统菜单更新接口",
+      "description": "",
+      "item": [
+        {
+          "name": "更新menuname",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4449ad21-e4c6-4c72-b76e-6802c9239f53",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "postman.setGlobalVariable(\"menuname\",\"站点管理updata\");",
+                  "postman.setGlobalVariable(\"menushortname\",\"station\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8888\");",
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_roadnetpkid\"));",
+                  "postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "d03f4759-d86c-4a68-8654-620f093f7eb3",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+sysmenu.data.pkid, function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('menuname update success', function () {",
+                  "    pm.expect(jsondata.data.menuname+\"\").to.equal(pm.globals.get(\"menuname\")+\"\");",
+                  "   });",
+                  "})"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "更新menushortname",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "5af42f99-af3e-4689-8c49-d40312ada430",
+                "type": "text/javascript",
+                "exec": [
+                  "//postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "//postman.setGlobalVariable(\"menuname\",\"站点管理updata\");",
+                  "postman.setGlobalVariable(\"menushortname\",\"station_updata\");",
+                  "//postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8888\");",
+                  "//postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_roadnetpkid\"));",
+                  "//postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "//postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "29932de4-8e55-4bbb-a968-90bd76ed7b72",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+sysmenu.data.pkid, function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('menushortname update success', function () {",
+                  "    pm.expect(jsondata.data.menushortname+\"\").to.equal(pm.globals.get(\"menushortname\")+\"\");",
+                  "   });",
+                  "})"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "更新menuurl",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c2338c91-265c-4e14-b154-19ed3c9dfdc1",
+                "type": "text/javascript",
+                "exec": [
+                  "//postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "//postman.setGlobalVariable(\"menuname\",\"站点管理updata\");",
+                  "//postman.setGlobalVariable(\"menushortname\",\"station_updata\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8999\");",
+                  "//postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_roadnetpkid\"));",
+                  "//postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "//postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "54ab722f-ccda-4fea-a5f2-00d52be3ab26",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+sysmenu.data.pkid, function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('menuurl update success', function () {",
+                  "    pm.expect(jsondata.data.menuurl+\"\").to.equal(pm.globals.get(\"menuurl\")+\"\");",
+                  "   });",
+                  "})"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "更新menuparentid",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "3b113cb4-e445-404d-824e-e013ea0c2486",
+                "type": "text/javascript",
+                "exec": [
+                  "//postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "//postman.setGlobalVariable(\"menuname\",\"站点管理updata\");",
+                  "//postman.setGlobalVariable(\"menushortname\",\"station_updata\");",
+                  "//postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8999\");",
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  "//postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\");",
+                  "//postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "7c4cb2a8-3617-4594-b1e7-5ddc99886af6",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+sysmenu.data.pkid, function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('menuparentid update success', function () {",
+                  "    pm.expect(jsondata.data.menuparentid+\"\").to.equal(pm.globals.get(\"menuparentid\")+\"\");",
+                  "   });",
+                  "})"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "更新menufunc",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "ea7a888e-517c-4721-a464-435fdb14fd06",
+                "type": "text/javascript",
+                "exec": [
+                  "//postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "//postman.setGlobalVariable(\"menuname\",\"站点管理updata\");",
+                  "//postman.setGlobalVariable(\"menushortname\",\"station_updata\");",
+                  "//postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8999\");",
+                  "//postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  "postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":0,\\\"select\\\":1}\");",
+                  "//postman.setGlobalVariable(\"menusort\",1);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "31583e91-49ae-4ec8-a717-493dc229f34b",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "",
+                  "//pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+sysmenu.data.pkid, function (err, response) {",
+                  "//    var jsondata=response.json();",
+                  "//    pm.test('menufunc update success', function () {",
+                  "//    pm.expect(jsondata.data.menufunc+\"\").to.equal(pm.globals.get(\"menufunc\")+\"\");",
+                  "//   });",
+                  "//})"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "更新menusort",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "25ee4092-5762-474b-8fa8-b218a333308c",
+                "type": "text/javascript",
+                "exec": [
+                  "//postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "//postman.setGlobalVariable(\"menuname\",\"站点管理updata\");",
+                  "//postman.setGlobalVariable(\"menushortname\",\"station_updata\");",
+                  "//postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8999\");",
+                  "//postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  "//postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":0,\\\"select\\\":1}\");",
+                  "postman.setGlobalVariable(\"menusort\",3);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "ea397e00-1a13-4a77-a4db-ffcc84c08d14",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "",
+                  "pm.sendRequest(\"http://\"+pm.environment.get(\"ip\")+\":\"+pm.environment.get(\"port\")+\"/menu/detail/\"+sysmenu.data.pkid, function (err, response) {",
+                  "    var jsondata=response.json();",
+                  "    pm.test('menusort update success', function () {",
+                  "    pm.expect(jsondata.data.menusort+\"\").to.equal(pm.globals.get(\"menusort\")+\"\");",
+                  "   });",
+                  "})"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "更新menuname,唯一性验证",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "df946a8b-ed87-4b31-9ee6-fed9a5b03bbd",
+                "type": "text/javascript",
+                "exec": [
+                  "//postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "postman.setGlobalVariable(\"menuname\",\"数字路网\");",
+                  "//postman.setGlobalVariable(\"menushortname\",\"station_updata\");",
+                  "//postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8999\");",
+                  "//postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  "//postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":0,\\\"select\\\":1}\");",
+                  "//postman.setGlobalVariable(\"menusort\",3);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "ae77c3f1-9fb4-4104-8bba-9119ca692b9b",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 400\"] = sysmenu.code === 400;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "更新menuname,长度大于50",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "826a46a7-ba82-4155-bbab-5cbf260c8dec",
+                "type": "text/javascript",
+                "exec": [
+                  "const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+                  "//postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "postman.setGlobalVariable(\"menuname\",\"更新菜单100000000000000000000000000000000000000000000000\");",
+                  "//postman.setGlobalVariable(\"menushortname\",\"station_updata\");",
+                  "//postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8999\");",
+                  "//postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  "//postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":0,\\\"select\\\":1}\");",
+                  "//postman.setGlobalVariable(\"menusort\",3);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "ae77c3f1-9fb4-4104-8bba-9119ca692b9b",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 400\"] = sysmenu.code === 400;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "更新menuname,输入为空",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "80aadc5a-7b1a-4298-9369-68e5990e0864",
+                "type": "text/javascript",
+                "exec": [
+                  "//postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "//postman.setGlobalVariable(\"menuname\",\"站点管理updata\");",
+                  "//postman.setGlobalVariable(\"menushortname\",\"station_updata\");",
+                  "//postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8999\");",
+                  "//postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  "//postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":0,\\\"select\\\":1}\");",
+                  "//postman.setGlobalVariable(\"menusort\",3);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "ae77c3f1-9fb4-4104-8bba-9119ca692b9b",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 400\"] = sysmenu.code === 400;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "更新menushortname,长度大于30",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "0aabb86d-ad7f-4c4d-9353-e72af2e7c8c4",
+                "type": "text/javascript",
+                "exec": [
+                  "const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+                  "//postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "postman.setGlobalVariable(\"menuname\",\"站点管理updata\");",
+                  "postman.setGlobalVariable(\"menushortname\",\"station_updata100000000000000000000000\");",
+                  "//postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8999\");",
+                  "//postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  "//postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":0,\\\"select\\\":1}\");",
+                  "//postman.setGlobalVariable(\"menusort\",3);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "ae77c3f1-9fb4-4104-8bba-9119ca692b9b",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 400\"] = sysmenu.code === 400;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "更新menuurl,长度大于300",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "3f7e9ef3-5738-4d6e-9b13-6297370790b3",
+                "type": "text/javascript",
+                "exec": [
+                  "const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+                  "//postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "//postman.setGlobalVariable(\"menuname\",\"站点管理updata\");",
+                  "postman.setGlobalVariable(\"menushortname\",\"station_updata\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"当menuurl的长度大于30010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\");",
+                  "//postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  "//postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":0,\\\"select\\\":1}\");",
+                  "//postman.setGlobalVariable(\"menusort\",3);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "ae77c3f1-9fb4-4104-8bba-9119ca692b9b",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 400\"] = sysmenu.code === 400;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "更新menuparentid,输入不存在的父节点id",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "df4388ee-c61b-409d-b8a9-1d5643b65945",
+                "type": "text/javascript",
+                "exec": [
+                  "//postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_stationpkid\"));",
+                  "//postman.setGlobalVariable(\"menuname\",\"站点管理updata\");",
+                  "//postman.setGlobalVariable(\"menushortname\",\"station_updata\");",
+                  "postman.setGlobalVariable(\"menuurl\",\"http://192.168.1.1.100:8999\");",
+                  "postman.setGlobalVariable(\"menuparentid\",\"1178925\");",
+                  "//postman.setGlobalVariable(\"menufunc\",\"{\\\"delete\\\":1,\\\"update\\\":1,\\\"add\\\":0,\\\"select\\\":1}\");",
+                  "//postman.setGlobalVariable(\"menusort\",3);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "ae77c3f1-9fb4-4104-8bba-9119ca692b9b",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 400\"] = sysmenu.code === 400;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"pkid\":{{pkid}},\r\n\"menuname\":\"{{menuname}}\",\r\n\"menushortname\":\"{{menushortname}}\",\r\n\"menuurl\":\"{{menuurl}}\",\r\n\"menuparentid\":{{menuparentid}},\r\n\"menufunc\":{{menufunc}},\r\n\"menusort\":{{menusort}}\r\n}"
+            },
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/update/",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "update",
+                ""
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "根据菜单父级编号查询接口",
+      "description": "",
+      "item": [
+        {
+          "name": "输入存在子级的父节点",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "84dd1654-fdf6-4ad2-8b59-df79c24067a7",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_syspkid\"));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "71324a40-5da7-4307-a5b9-3d9bc58da640",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"sysmenus[0].pkid is right\"] = sysmenu.data.sysmenus[0].pkid === pm.globals.get(\"sysmenu_roadnetpkid\");",
+                  "tests[\"sysmenus[0].menuname is right\"] = sysmenu.data.sysmenus[0].menuname === \"数字路网\";",
+                  "tests[\"sysmenus[1].pkid is right\"] = sysmenu.data.sysmenus[1].pkid === pm.globals.get(\"sysmenu_stationpkid\");",
+                  "tests[\"sysmenus[1].menuname is right\"] = sysmenu.data.sysmenus[1].menuname === \"站点管理updata\";",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/getbymenuparentid?menuparentid={{menuparentid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "getbymenuparentid"
+              ],
+              "query": [
+                {
+                  "key": "menuparentid",
+                  "value": "{{menuparentid}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入不存在子级的父节点",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "2584f357-df20-43bb-85b4-dd86fc6b03cf",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_roadnetpkid\"));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "a2225339-52b8-4b2c-94eb-f86806686089",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"sysmenus is null\"] = sysmenu.data.sysmenus.length === 0;",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/getbymenuparentid?menuparentid={{menuparentid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "getbymenuparentid"
+              ],
+              "query": [
+                {
+                  "key": "menuparentid",
+                  "value": "{{menuparentid}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入不存在的父节点",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "79b1a8ca-d629-4010-b3a4-8fc6bdab2951",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuparentid\",\"189423\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "42f199c9-9a21-4c32-a5bd-a800621d7712",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"sysmenus is null\"] = sysmenu.data.sysmenus.length === 0;",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/getbymenuparentid?menuparentid={{menuparentid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "getbymenuparentid"
+              ],
+              "query": [
+                {
+                  "key": "menuparentid",
+                  "value": "{{menuparentid}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "系统菜单分页查询接口",
+      "description": "",
+      "item": [
+        {
+          "name": "menuname&sort不输入",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "358550b2-fb9f-447c-a127-260a1b572235",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"每页数据 is 2\"] = sysmenu.data.pageSize === 2;",
+                  "tests[\"总页数 is 2\"] = sysmenu.data.pages === 2;",
+                  "tests[\"分页总数据 is 4\"] = sysmenu.data.total === 4;",
+                  "//tests[\"list[0].menuname is right\"] = sysmenu.data.list[0].menuname === \"站点管理updata\";",
+                  "tests[\"list[1].menuname is right\"] = sysmenu.data.list[1].menuname === \"站点人员管理\";",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/list?pagenum=1&pagesize=2",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "pagenum",
+                  "value": "1",
+                  "equals": true
+                },
+                {
+                  "key": "pagesize",
+                  "value": "2",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "menuname不输入&sort=+updatetime",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "eccfee64-c829-45dd-a1a6-519ec396beb3",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"每页数据 is 6\"] = sysmenu.data.pageSize === 6;",
+                  "tests[\"总页数 is 1\"] = sysmenu.data.pages === 1;",
+                  "tests[\"当前页面数据 is 4\"] = sysmenu.data.size === 4;",
+                  "tests[\"分页总数据 is 4\"] = sysmenu.data.total === 4;",
+                  "tests[\"list[3].menuname is right\"] = sysmenu.data.list[3].menuname === \"站点管理updata\";",
+                  "//tests[\"list[2].menuname is right\"] = sysmenu.data.list[2].menuname === \"站点人员管理\";",
+                  "//tests[\"list[1].menuname is right\"] = sysmenu.data.list[1].menuname === \"数字路网\";",
+                  "//tests[\"list[0].menuname is right\"] = sysmenu.data.list[0].menuname === \"系统\";",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/list?pagenum=1&pagesize=6&sort=%2Bupdatetime",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "pagenum",
+                  "value": "1",
+                  "equals": true
+                },
+                {
+                  "key": "pagesize",
+                  "value": "6",
+                  "equals": true
+                },
+                {
+                  "key": "sort",
+                  "value": "%2Bupdatetime",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入menuname部分值&sort=-updatetime",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "52802a0a-e32d-4cb5-9960-f1e2d025272c",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"每页数据 is 2\"] = sysmenu.data.pageSize === 2;",
+                  "tests[\"总页数 is 1\"] = sysmenu.data.pages === 1;",
+                  "tests[\"分页总数据 is 2\"] = sysmenu.data.total === 2;",
+                  "tests[\"list[0].menuname is right\"] = sysmenu.data.list[0].menuname === \"站点管理updata\";",
+                  "//tests[\"list[1].menuname is right\"] = sysmenu.data.list[1].menuname === \"站点人员管理\";",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/list?pagenum=1&pagesize=2&menuname=站点&sort=-updatetime",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "pagenum",
+                  "value": "1",
+                  "equals": true
+                },
+                {
+                  "key": "pagesize",
+                  "value": "2",
+                  "equals": true
+                },
+                {
+                  "key": "menuname",
+                  "value": "站点",
+                  "equals": true
+                },
+                {
+                  "key": "sort",
+                  "value": "-updatetime",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入menuname（匹配menushortname）",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "3afe0207-4bc5-4c73-9df0-d1c27c5c2e11",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"每页数据 is 2\"] = sysmenu.data.pageSize === 2;",
+                  "tests[\"总页数 is 1\"] = sysmenu.data.pages === 1;",
+                  "tests[\"当前页面数据 is 1\"] = sysmenu.data.size === 1;",
+                  "tests[\"分页总数据 is 1\"] = sysmenu.data.total === 1;",
+                  "tests[\"list[0].menuname is right\"] = sysmenu.data.list[0].menuname === \"系统\";",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/list?pagenum=1&pagesize=2&menuname=sys",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "pagenum",
+                  "value": "1",
+                  "equals": true
+                },
+                {
+                  "key": "pagesize",
+                  "value": "2",
+                  "equals": true
+                },
+                {
+                  "key": "menuname",
+                  "value": "sys",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入menuname精确值（匹配menuname）",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "1946ac83-724c-408d-bff0-2e5114d9cb66",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"每页数据 is 10\"] = sysmenu.data.pageSize === 10;",
+                  "tests[\"总页数 is 1\"] = sysmenu.data.pages === 1;",
+                  "tests[\"当前页面数据 is 1\"] = sysmenu.data.size === 1;",
+                  "tests[\"分页总数据 is 1\"] = sysmenu.data.total === 1;",
+                  "tests[\"list[0].menuname is right\"] = sysmenu.data.list[0].menuname === \"数字路网\";",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/list?pagenum=1&pagesize=10&menuname=数字路网",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "pagenum",
+                  "value": "1",
+                  "equals": true
+                },
+                {
+                  "key": "pagesize",
+                  "value": "10",
+                  "equals": true
+                },
+                {
+                  "key": "menuname",
+                  "value": "数字路网",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入不存在的menuname",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "57130c2a-2789-4fd3-bcdb-f2ad59ed20cd",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"每页数据 is 10\"] = sysmenu.data.pageSize === 10;",
+                  "tests[\"总页数 is 0\"] = sysmenu.data.pages === 0;",
+                  "tests[\"当前页面数据 is 1\"] = sysmenu.data.size === 0;",
+                  "tests[\"分页总数据 is 1\"] = sysmenu.data.total === 0;",
+                  "tests[\"list.length is 0\"] = sysmenu.data.list.length === 0",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/list?pagenum=1&pagesize=10&menuname=\"不存在\"",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "pagenum",
+                  "value": "1",
+                  "equals": true
+                },
+                {
+                  "key": "pagesize",
+                  "value": "10",
+                  "equals": true
+                },
+                {
+                  "key": "menuname",
+                  "value": "\"不存在\"",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "根据菜单主键查询接口",
+      "description": "",
+      "item": [
+        {
+          "name": "输入存在的pkid，一级菜单",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "af9c228c-8bbc-4f5a-8873-631ff1f350c5",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "e98aa79a-a874-4d6b-8d9f-05c6d964ef9d",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"pkid is right\"] = sysmenu.data.pkid === pm.globals.get(\"sysmenu_syspkid\")+\"\";",
+                  "tests[\"menuname is right\"] = sysmenu.data.menuname === \"系统\";",
+                  "tests[\"menushortname is right\"] = sysmenu.data.menushortname === \"sys\";",
+                  "tests[\"menuurl is right\"] = sysmenu.data.menuurl === \"\";",
+                  "tests[\"menuparentid is right\"] = sysmenu.data.menuparentid === \"0\";",
+                  "tests[\"menufunc is right\"] = sysmenu.data.menufunc === \"{}\";",
+                  "tests[\"menusort is right\"] = sysmenu.data.menusort === 1;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/detail/{{pkid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "detail",
+                "{{pkid}}"
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入存在的pkid，存在父级id",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "e7500a6f-1ee1-43da-a240-f7a8170f282e",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_roadnetpkid\"));",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "10ed120d-d9a5-42eb-9ff4-9e12c14175a9",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"pkid is right\"] = sysmenu.data.pkid === pm.globals.get(\"sysmenu_roadnetpkid\")+\"\";",
+                  "tests[\"menuname is right\"] = sysmenu.data.menuname === \"数字路网\";",
+                  "tests[\"menushortname is right\"] = sysmenu.data.menushortname === \"roadnet\";",
+                  "tests[\"menuurl is right\"] = sysmenu.data.menuurl === \"http://192.168.1.1.100:8888\";",
+                  "tests[\"menuparentid is right\"] = sysmenu.data.menuparentid === pm.globals.get(\"sysmenu_syspkid\");",
+                  "//tests[\"menufunc is right\"] = sysmenu.data.menufunc === \"{\\\"delete\\\":0,\\\"update\\\":1,\\\"add\\\":1,\\\"select\\\":1}\";",
+                  "tests[\"menusort is right\"] = sysmenu.data.menusort === 1;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/detail/{{pkid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "detail",
+                "{{pkid}}"
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入不存在的pkid",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "7eab512a-b2ab-4536-9d16-b6f2546e9ccf",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"pkid\",\"1238456\");",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "b30ccf9c-bbb1-4430-bea0-e24d0bace6df",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"data is null\"] = sysmenu.data === null;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/detail/{{pkid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "detail",
+                "{{pkid}}"
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "菜单名称唯一判断接口",
+      "description": "",
+      "item": [
+        {
+          "name": "输入存在的menuname,pkid不输入",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "357ee51a-5c24-4345-a3da-27bff6741fd2",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"系统\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "61fbc018-fed8-448c-9147-323e25aac058",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"菜单名称存在\"] = sysmenu.data.isexist === true;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/menuname?menuname={{menuname}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "menuname"
+              ],
+              "query": [
+                {
+                  "key": "menuname",
+                  "value": "{{menuname}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入存在的menuname,pkid输入乱码",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "463215d3-db1c-457a-af9a-8fccfcb19194",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"系统\");",
+                  "postman.setGlobalVariable(\"pkid\",\"123855\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "61fbc018-fed8-448c-9147-323e25aac058",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"菜单名称存在\"] = sysmenu.data.isexist === true;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/menuname?menuname={{menuname}}&pkid={{pkid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "menuname"
+              ],
+              "query": [
+                {
+                  "key": "menuname",
+                  "value": "{{menuname}}",
+                  "equals": true
+                },
+                {
+                  "key": "pkid",
+                  "value": "{{pkid}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入匹配的menuname&pkid",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "08a0cbb7-ca0f-451a-a1ed-7823288d154d",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"系统\");",
+                  "postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "b61c3ac1-9005-45bf-92d1-e2b4736c28ea",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"菜单名称不存在\"] = sysmenu.data.isexist === false;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/menuname?menuname={{menuname}}&pkid={{pkid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "menuname"
+              ],
+              "query": [
+                {
+                  "key": "menuname",
+                  "value": "{{menuname}}",
+                  "equals": true
+                },
+                {
+                  "key": "pkid",
+                  "value": "{{pkid}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入不存在的menuname",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c13f0b9f-8743-4154-aaa1-010f1322a9d7",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"菜单名称111\");",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "b61c3ac1-9005-45bf-92d1-e2b4736c28ea",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"菜单名称不存在\"] = sysmenu.data.isexist === false;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/menuname?menuname={{menuname}}&pkid={{pkid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "menuname"
+              ],
+              "query": [
+                {
+                  "key": "menuname",
+                  "value": "{{menuname}}",
+                  "equals": true
+                },
+                {
+                  "key": "pkid",
+                  "value": "{{pkid}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入不存在的menuname&存在的pkid",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "0cb8d163-0a80-489e-8d1e-e2c29cdea41c",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuname\",\"菜单名称111\");",
+                  "postman.setGlobalVariable(\"pkid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "b61c3ac1-9005-45bf-92d1-e2b4736c28ea",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"菜单名称不存在\"] = sysmenu.data.isexist === false;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/menuname?menuname={{menuname}}&pkid={{pkid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "menuname"
+              ],
+              "query": [
+                {
+                  "key": "menuname",
+                  "value": "{{menuname}}",
+                  "equals": true
+                },
+                {
+                  "key": "pkid",
+                  "value": "{{pkid}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "系统菜单主键批量查询",
+      "description": "",
+      "item": [
+        {
+          "name": "输入存在的三个pkid",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "22bea2f7-8244-4756-9d1a-0310a85310d3",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"pkids\",pm.globals.get(\"sysmenu_syspkid\")+\",\"+pm.globals.get(\"sysmenu_roadnetpkid\")+\",\"+pm.globals.get(\"sysmenu_stationpkid\"));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "2d397b5a-7bfa-4cc6-90a7-d005de95e4fd",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"data[0].pkid is right\"] = sysmenu.data[0].pkid === pm.globals.get(\"sysmenu_syspkid\");",
+                  "tests[\"data[0].menuname is right\"] = sysmenu.data[0].menuname === \"系统\";",
+                  "tests[\"data[1].pkid is right\"] = sysmenu.data[1].pkid === pm.globals.get(\"sysmenu_roadnetpkid\");",
+                  "tests[\"data[1].menuname is right\"] = sysmenu.data[1].menuname === \"数字路网\";",
+                  "tests[\"data[2].pkid is right\"] = sysmenu.data[2].pkid === pm.globals.get(\"sysmenu_stationpkid\");",
+                  "tests[\"data[2].menuname is right\"] = sysmenu.data[2].menuname === \"站点管理updata\";"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/getbypkids?pkids={{pkids}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "getbypkids"
+              ],
+              "query": [
+                {
+                  "key": "pkids",
+                  "value": "{{pkids}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入两个存在的pkid，一个不存在的pkid",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c807d4b8-8e8e-44f1-a434-89d4a6233cab",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"pkids\",pm.globals.get(\"sysmenu_syspkid\")+\",\"+pm.globals.get(\"sysmenu_roadnetpkid\")+\",12358414\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "4ef18795-d577-4fc8-beb6-e25d5417611b",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"data[0].pkid is right\"] = sysmenu.data[0].pkid === pm.globals.get(\"sysmenu_syspkid\");",
+                  "tests[\"data[0].menuname is right\"] = sysmenu.data[0].menuname === \"系统\";",
+                  "tests[\"data[1].pkid is right\"] = sysmenu.data[1].pkid === pm.globals.get(\"sysmenu_roadnetpkid\");",
+                  "tests[\"data[1].menuname is right\"] = sysmenu.data[1].menuname === \"数字路网\";"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/getbypkids?pkids={{pkids}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "getbypkids"
+              ],
+              "query": [
+                {
+                  "key": "pkids",
+                  "value": "{{pkids}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入一个不存在的pkid",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "566a8219-64d4-4b75-9597-1acba8cac1cd",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"pkids\",\"12358414177\");"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "70cfe92e-f1ca-4e45-a8dc-446ad86a4123",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"data's length is 0\"] = sysmenu.data.length === 0;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/getbypkids?pkids={{pkids}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "getbypkids"
+              ],
+              "query": [
+                {
+                  "key": "pkids",
+                  "value": "{{pkids}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "多级下拉框联动查询接口",
+      "description": "",
+      "item": [
+        {
+          "name": "menuparentid=0",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "627e4549-e6c2-460a-9103-82f8d1f8b674",
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "b92dc122-7759-4cbc-8847-105323b31de6",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"menumap is right\"] = sysmenu.data.menumap === \"{\"+pm.globals.get(\"sysmenu_syspkid\")+\"=系统}\";",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/getnamebymenuparentid?menuparentid=0",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "getnamebymenuparentid"
+              ],
+              "query": [
+                {
+                  "key": "menuparentid",
+                  "value": "0",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "menuparentid输入一级菜单的pkid",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "7b6e9593-ad53-43fa-9911-f554c4643e17",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_syspkid\"));",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "48517ca7-132e-4d07-866f-fefedaa9bbe9",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "//tests[\"menumap is right\"] = sysmenu.data.menumap === \"{\"+pm.globals.get(\"sysmenu_roadnetpkid\")+\"=数字路网, \"+pm.globals.get(\"sysmenu_stationpkid\")+\"=站点管理updata}\";",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/getnamebymenuparentid?menuparentid={{menuparentid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "getnamebymenuparentid"
+              ],
+              "query": [
+                {
+                  "key": "menuparentid",
+                  "value": "{{menuparentid}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "menuparentid输入无子级的pkid",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "0cbedb4d-ecfc-4917-8309-8f9e617aeb83",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuparentid\",pm.globals.get(\"sysmenu_moneypkid\"));",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "417f6120-3c5d-4a3c-ac9e-97fcb0c4937e",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"menumap is {}\"] = sysmenu.data.menumap === \"{}\";",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/getnamebymenuparentid?menuparentid={{menuparentid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "getnamebymenuparentid"
+              ],
+              "query": [
+                {
+                  "key": "menuparentid",
+                  "value": "{{menuparentid}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "输入不存在的menuparentid",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "3166b92e-2ac5-4ada-843f-1933450de643",
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setGlobalVariable(\"menuparentid\",\"184135822\");",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "6f1fee3f-dc64-4549-a06d-80f0d02f77aa",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"response code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+                  "tests[\"Body matches string data\"] =responseBody.has(\"data\");",
+                  "tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+                  "var sysmenu = JSON.parse(responseBody);",
+                  "tests[\"code is 200\"] = sysmenu.code === 200;",
+                  "tests[\"menumap is {}\"] = sysmenu.data.menumap === \"{}\"",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "http://{{ip}}:{{port}}/menu/getnamebymenuparentid?menuparentid={{menuparentid}}",
+              "protocol": "http",
+              "host": [
+                "{{ip}}"
+              ],
+              "port": "{{port}}",
+              "path": [
+                "menu",
+                "getnamebymenuparentid"
+              ],
+              "query": [
+                {
+                  "key": "menuparentid",
+                  "value": "{{menuparentid}}",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

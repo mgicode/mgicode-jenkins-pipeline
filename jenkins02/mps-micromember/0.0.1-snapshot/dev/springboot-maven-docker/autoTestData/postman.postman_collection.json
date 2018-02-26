@@ -1,0 +1,6349 @@
+{
+	"info": {
+		"name": "移动支付用户管理",
+		"_postman_id": "f670c1ae-587f-657b-2c7f-6afed93833bf",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "用户注册",
+			"description": "",
+			"item": [
+				{
+					"name": "密码遮挡",
+					"description": "",
+					"item": [
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "960315d6-363d-4372-9bc6-6dee2e80d0c0",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var sysDict_error_data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = sysDict_data.code === 200;",
+											"",
+											"tests[\"password is ok\"] = sysDict_data.data === \"zh****23\"",
+											"",
+											"//pm.globals.get(\"password\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "68f64202-8cdf-43c2-8305-3fb6ffc9a7f8",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/hidepassword",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"hidepassword"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码长度不够",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "479b9ac0-d264-4207-a642-fc5dfd87d6ac",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"//var sysDict_error_data = JSON.parse(responseBody);",
+											"//tests[\"code is 200\"] = sysDict_data.code === 401;",
+											"",
+											"tests[\"passwordhidestr is empty\"] = responseBody.passwordhidestr === \"\";",
+											"",
+											"//tests[\"password is ok\"] = sysDict_data.data === \"zh****23\"",
+											"",
+											"//pm.globals.get(\"password\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "19544473-6a21-419f-a0a7-5957e33a3cd2",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"password\",\"zh23\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/hidepassword",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"hidepassword"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码长度过长",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "84201041-8f84-4c82-8591-3f2eca927dbc",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"",
+											"//var error_data = JSON.parse(responseBody);",
+											"//tests[\"code is 401\"] = error_data.code === 401;",
+											"",
+											"tests[\"passwordhidestr is empty\"] = responseBody.passwordhidestr === \"\";",
+											"",
+											"",
+											"//tests[\"password is ok\"] = sysDict_data.data === \"zh****23\"",
+											"",
+											"//pm.globals.get(\"password\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8cec15f8-74dd-4f43-abd0-0d495bb7f2a0",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"password\",\"zh23333333333333333333332222ddd\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/hidepassword",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"hidepassword"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码包括空格",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "76e4c640-beef-4c6f-9bdc-a31acb983305",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"//var sysDict_error_data = JSON.parse(responseBody);",
+											"//tests[\"code is 401\"] = sysDict_data.code === 401;",
+											"",
+											"tests[\"passwordhidestr is empty\"] = responseBody.passwordhidestr === \"\";",
+											"",
+											"",
+											"//tests[\"password is ok\"] = sysDict_data.data === \"zh****23\"",
+											"",
+											"//pm.globals.get(\"password\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "12e56e3b-a39c-4d11-86fe-02f346579340",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"password\",\"zh   233333ddd\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/hidepassword",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"hidepassword"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码9位以下纯数字",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a8adc765-6bee-4bb6-ab12-3f355c8b5417",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"",
+											"tests[\"passwordhidestr is empty\"] = responseBody.passwordhidestr === \"\";",
+											"",
+											"",
+											"//tests[\"password is ok\"] = sysDict_data.data === \"zh****23\"",
+											"",
+											"//pm.globals.get(\"password\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "599a1c61-88eb-4000-97d8-04424c6e4559",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"password\",\"zh   23444523\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/hidepassword",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"hidepassword"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "验证码生成",
+					"description": "",
+					"item": [
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "74590737-6b6b-444f-9f6f-7bf5a40da1d2",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"status is ok\"] = data.data.status === true;",
+											"tests[\"vcode is ok\"] = length(data.data.vscode) === 6;",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "37eeccbe-3d1c-47ee-91a5-af4c4b00c201",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000823\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneReg\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode?phone={{phone}}&scene={{scene}}",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"equals": true
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "号码长不够",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3720ad59-ad46-4eed-bd19-760a13938f54",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "31ce6029-21f9-40eb-8fa7-57b9912e2d71",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"136070823\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneReg\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode?phone={{phone}}&scene={{scene}}",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"equals": true
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "号码长过长",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b1f19031-4992-4355-8a11-b458e449b98c",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "abe701d6-bb18-49cf-affd-4ddf6f2c1625",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"136070823322\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneReg\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode?phone={{phone}}&scene={{scene}}",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"equals": true
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "号码类型不对",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c3d4952d-f64d-44c4-a862-d903a63d6e1e",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "028b9d2e-3d2f-423d-804c-454fd632f9ca",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"1240708233\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneReg\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode?phone={{phone}}&scene={{scene}}",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"equals": true
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "密码加密",
+					"description": "",
+					"item": [
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "07da17d5-421c-4009-bcf4-9cf2ea8d3850",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"//var  data = JSON.parse(responseBody);",
+											"//tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"tests[\"passwordHash is ok\"] = length(responseBody.passwordHash)>0 ",
+											"",
+											"//pm.globals.get(\"password\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "68f64202-8cdf-43c2-8305-3fb6ffc9a7f8",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/passwordhash",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"passwordhash"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码长度不够",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1edac580-a8f7-43c5-81d5-ddea5b198092",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"//var  data = JSON.parse(responseBody);",
+											"//tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"tests[\"passwordHash is not ok\"] = (responseBody.passwordHash===null)||(responseBody.passwordHash===\"\")"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "19544473-6a21-419f-a0a7-5957e33a3cd2",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"password\",\"zh23\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/passwordhash",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"passwordhash"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码长度过长",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6c0d0777-2a44-4057-9054-1a8608d01c60",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"",
+											"",
+											"tests[\"passwordHash is not ok\"] = (responseBody.passwordHash===null)||(responseBody.passwordHash===\"\")"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8cec15f8-74dd-4f43-abd0-0d495bb7f2a0",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"password\",\"zh23333333333333333333332222ddd\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/passwordhash",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"passwordhash"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码包括空格",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "274e8268-3541-42af-8428-61ce2de61761",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"",
+											"",
+											"tests[\"passwordHash is not ok\"] = (responseBody.passwordHash===null)||(responseBody.passwordHash===\"\")"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "12e56e3b-a39c-4d11-86fe-02f346579340",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"password\",\"zh   233333ddd\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/passwordhash",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"passwordhash"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码9位以下纯数字",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "292fa99c-27b1-4f19-a013-d34f05e4d483",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"",
+											"tests[\"passwordHash is not ok\"] = (responseBody.passwordHash===null)||(responseBody.passwordHash===\"\")"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "599a1c61-88eb-4000-97d8-04424c6e4559",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"password\",\"zh   23444523\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/passwordhash",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"passwordhash"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "用户注册",
+					"description": "",
+					"item": [
+						{
+							"name": "生成验证码",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c2dae979-bf0a-4004-ba9a-1cb616777719",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"status is ok\"] = data.data.status === true;",
+											"tests[\"vcode is ok\"] = length(data.data.vscode) === 6;",
+											"",
+											"",
+											"pm.globals.set(\"vscode\", data.data.vscode);"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "37eeccbe-3d1c-47ee-91a5-af4c4b00c201",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000823\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneReg\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode?phone={{phone}}&scene={{scene}}",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"equals": true
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "7be73928-fee6-4f3b-98f3-437001ab168b",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = error_data.code === 200;",
+											"tests[\"name is ok\"] = error_data.data.loginName === pm.globals.get(\"loginname\");",
+											"tests[\"phone is ok\"] = error_data.data.phone === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ca9a9d5a-b81b-4e53-8fdc-7ffa36f01be4",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zhangs\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"",
+											"//从生成验证码来获取",
+											"postman.setGlobalVariable(\"vcode\",pm.globals.get(\"vscode\"));",
+											"",
+											"",
+											"",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "名称长度不够",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "560ea91c-8a67-41eb-b7c6-dc315952828e",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 4200\"] = error_data.code === 400;",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8bbd8886-d371-4879-a26a-a9c5a771e295",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "名称长度过长",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3d446826-9548-43f6-960b-b5e135be2a6c",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "5abb83d6-e9b0-4062-ac6e-73f5c704d0ce",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs1111111111111111111111221dedddd\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "名称长度包括特殊字符",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "89724e71-4c6e-49bb-94e5-9ed01e635bfd",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2437a5cc-c0dd-41c7-85ae-3bc56e8df73e",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs@12345\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "名称长度包括空格",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "091f8dbe-7918-42e7-b975-b2d7e6d1c38a",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b2b5da83-3055-4af8-965d-09139670cecc",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs@  12345\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码长度不够",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "03bfae10-be02-4182-a6a7-fd86b6ff1c18",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "facdb9b9-9a9f-443a-8ea4-47bf4b7e3756",
+										"type": "text/javascript",
+										"exec": [
+											"//{{loginname}}",
+											"//{{password}}",
+											"//{{phone}}",
+											"//{{email}}",
+											"//{{vcode}}",
+											"//{{nickname}}",
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"zh\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码长度够长",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6c85c546-aed4-49ee-bd1c-04d9c8db9549",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "7d7f6626-65dd-4fc3-a3f9-943c612deac3",
+										"type": "text/javascript",
+										"exec": [
+											"//{{loginname}}",
+											"//{{password}}",
+											"//{{phone}}",
+											"//{{email}}",
+											"//{{vcode}}",
+											"//{{nickname}}",
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"zh213ddddcdwe212113321222dddeeeddee\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码长度包括空格",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a71485c0-081e-46c4-b5d8-f5560c66c1d1",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = error_data.code === 400;",
+											"",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "cf372ace-c112-4e3b-b9e9-c5b6ee00e89a",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"zh213d       \");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码为9位以下数字",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "71c9a37a-2758-4025-8676-b44ba2d031db",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "c81d8dab-8fa5-4758-9c45-58c4f192fde7",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"1234567\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "验证码为空",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "71c9a37a-2758-4025-8676-b44ba2d031db",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ffb874b0-4224-434e-b02b-a56f3d5e9e18",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"1234567\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "验证码不对",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "71c9a37a-2758-4025-8676-b44ba2d031db",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "30c20be7-c2d6-4095-a3db-18e04e0e45c5",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"1234567\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"postman.setGlobalVariable(\"vcode\",\"324232\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "手机号码长度不够",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "71c9a37a-2758-4025-8676-b44ba2d031db",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8f60f7ec-b201-40ff-8b1e-c03dda763412",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"1234567\");",
+											"postman.setGlobalVariable(\"phone\",\"136070008\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "手机号码长度过长",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "71c9a37a-2758-4025-8676-b44ba2d031db",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "55de14a5-35b8-4cc8-8237-6d6fe7aeb692",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"1234567\");",
+											"postman.setGlobalVariable(\"phone\",\"136070008322\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "手机号码类型不对",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "71c9a37a-2758-4025-8676-b44ba2d031db",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "623b08af-20b3-4d8f-b13f-c458dad1f53a",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"1234567\");",
+											"postman.setGlobalVariable(\"phone\",\"126070008322\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "手机号码已经存在",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "71c9a37a-2758-4025-8676-b44ba2d031db",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b275d4ef-1ea4-4a9c-80b0-904cdd586e09",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"1234567\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "邮件格式不对",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "71c9a37a-2758-4025-8676-b44ba2d031db",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "0be51bc7-df40-4846-99cf-b34cc74894b3",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"1234567\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkj.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "邮件已经存在",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "71c9a37a-2758-4025-8676-b44ba2d031db",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = error_data.code === 400;",
+											"",
+											"//tests[\"name is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"loginname\");",
+											"//tests[\"phone is ok\"] = sysDict_data.data.loginName === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "f3d892f5-4aa2-41c7-b8d7-9e6200d91ef0",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs12345\");",
+											"postman.setGlobalVariable(\"password\",\"1234567\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"//postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "获取手机验证码",
+					"description": "",
+					"item": [
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "13c03e37-b60a-425f-9800-1015ff20a8c7",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"status is ok\"] = data.data.status === true;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "37eeccbe-3d1c-47ee-91a5-af4c4b00c201",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000823\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneReg\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode/sent",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode",
+										"sent"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "号码长不够",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f257887f-71f7-4670-b4fd-5d5b855a18dd",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"//tests[\"status is ok\"] = sysDict_data.data.status === true;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "31ce6029-21f9-40eb-8fa7-57b9912e2d71",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"136070823\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneReg\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode/sent",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode",
+										"sent"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "号码长过长",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "03c493d7-63c7-495d-870b-f4d116f4bf6a",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"//tests[\"status is ok\"] = sysDict_data.data.status === true;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "abe701d6-bb18-49cf-affd-4ddf6f2c1625",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"136070823322\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneReg\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode/sent",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode",
+										"sent"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "号码类型不对",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1f4377a5-70c3-4fbd-be1e-3378885411fa",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"//tests[\"status is ok\"] = sysDict_data.data.status === true;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "028b9d2e-3d2f-423d-804c-454fd632f9ca",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"1240708233\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneReg\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode/sent",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode",
+										"sent"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "场景参数不对",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5708f39e-c2cf-42e1-bec8-130c125dc19e",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"tests[\"status is ok\"] = data.data.status === false;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "6d97be43-551c-4bf4-9b09-eac76a9254c7",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"1240708233\");",
+											"postman.setGlobalVariable(\"scene\",\"ee233\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode/sent",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode",
+										"sent"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "手机唯一性验证",
+					"description": "",
+					"item": [
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ece80fe0-e842-4396-bbb8-cfe335a8c389",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"name is ok\"] = data.data.isexist === false;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "73620b65-aedb-4e52-9b25-6827479952b2",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000823\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkphone",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkphone"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "号码长度不够",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c4880da8-0f44-43e5-8b30-ba552cad8d1a",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "34debe8e-8cd4-4044-93e2-4f2a735d8360",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"136070008\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkphone",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkphone"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "号码长度过长",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bbe8ede4-3d41-418f-844b-dde66194a311",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d8594083-5004-4372-a40f-41b87f9b3a5f",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"1360700083223\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkphone",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkphone"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "号码类型不对",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "908c78f6-dbde-4865-be3e-e7e8daffe37c",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3eb57866-baef-4713-885a-dc144a984c9f",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"12007000821\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkphone",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkphone"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "手机号码已经存在",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "92a6fbaf-3540-481e-b950-41f26f6055e9",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											"tests[\"phone is exist\"] = data.data.isexist === true;"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "96c35402-07ae-46ee-a624-2adc466680a3",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkphone",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkphone"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "邮箱唯一性验证",
+					"description": "",
+					"item": [
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5aa84c28-15af-4410-85f4-3ab7c26e4629",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"name is ok\"] = data.data.isexist === false;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "038b8703-f057-4471-9c62-7fdd51423a06",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"email\",\"sjkjs123@155.com\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkemail",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkemail"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "邮件格式不对",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1e8f18e8-5550-4347-becc-f5b9b08a9be1",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"//tests[\"name is ok\"] = sysDict_data.data.isexist === false;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "23197526-f74b-4597-b315-5af83b7f5520",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"email\",\"sjkjs123155.com\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkemail",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkemail"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "增加一个手机用户",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9304b4d7-6311-4d63-b012-bce1978cd3a9",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"name is ok\"] = data.data.loginName === pm.globals.get(\"loginname\");",
+											"tests[\"phone is ok\"] = data.data.phone === pm.globals.get(\"phone\");",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "cc9e70c2-d1bd-4b74-872d-e8aedae94e99",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zhangs123\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@12333\");",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"email\",\"sjkjs123@155.com\");",
+											"postman.setGlobalVariable(\"nickname\",\"张磊123\");",
+											"postman.setGlobalVariable(\"vcode\",\"\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "{{nickname}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/register",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"register"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "账号已经存在",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "574d3672-ce0b-4e2b-af30-375283e85919",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"name is ok\"] = data.data.isexist === true;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "95579d63-76fc-40f4-8d88-0732a2979b65",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"//postman.setGlobalVariable(\"loginName\",\"zhangsange3\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkemail",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkemail"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "账号唯一性验证",
+					"description": "",
+					"item": [
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b6ce56f5-096a-448f-a194-8b6e149cc523",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var sysDict_error_data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = sysDict_data.code === 200;",
+											"tests[\"name is ok\"] = sysDict_data.data.isexist === false;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "f01d1405-7dec-4577-9dde-2cfa74f8ffec",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginName\",\"zhangsange3\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginName",
+											"value": "{{loginName}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkname",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkname"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "账号长度不够",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "da59e634-0649-4d17-ae40-750138d2ff75",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var sysDict_error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = sysDict_data.code === 400;",
+											"//tests[\"name is ok\"] = sysDict_data.data.isexist === false;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "dbc38b77-dae2-4a5b-b0e5-0c5b66e6e799",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginName\",\"zs\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginName",
+											"value": "{{loginName}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkname",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkname"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "账号长度过长",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "da59e634-0649-4d17-ae40-750138d2ff75",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var sysDict_error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = sysDict_data.code === 400;",
+											"//tests[\"name is ok\"] = sysDict_data.data.isexist === false;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "7b40a1f9-5a86-4b04-af97-5460e7873738",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginName\",\"zs333333332222222dddddddSSSV\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginName",
+											"value": "{{loginName}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkname",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkname"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "账号包括空格",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "da59e634-0649-4d17-ae40-750138d2ff75",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var sysDict_error_data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = sysDict_data.code === 400;",
+											"//tests[\"name is ok\"] = sysDict_data.data.isexist === false;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "e61b9528-5f39-4299-9c30-4b4261b1e3b7",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginName\",\"z   seqqwww\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginName",
+											"value": "{{loginName}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkname",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkname"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "账号已经存在",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "29481f02-1f8e-4e23-9f93-bd387ad8863e",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var sysDict_error_data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = sysDict_data.code === 200;",
+											"tests[\"name is ok\"] = sysDict_data.data.isexist === true;",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "1e51acd1-0016-4af3-b08e-1097477f31ce",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginName\",\"zhangs\");",
+											"//zhangs"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginName",
+											"value": "{{loginName}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/checkname",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"checkname"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "用户登陆",
+			"description": "",
+			"item": [
+				{
+					"name": "账户登陆",
+					"description": "",
+					"item": [
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "809c220b-7581-46ec-b918-30bcee5f3e18",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"tests[\"access_token is ok\"] = data.data.access_token.length >0;",
+											"tests[\"loginname is ok\"] = data.data.member.loginname===\"zhangs\"",
+											"tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d180bdf7-641c-4088-ab43-f74759fc2b3a",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"13607000822\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "登陆名长度不够",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2197b3b5-2d75-4905-b59e-0483c1f15e87",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"// postman.setGlobalVariable(\"loginname\",\"zhangs\");",
+											"// postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"// postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"// postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"// postman.setGlobalVariable(\"nickname\",\"张磊123\");"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "234b10e7-6467-4e22-8df9-66383a0bc7a4",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"13607\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "登陆名为字母",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e979d9fc-b493-4c7d-93cc-1189adf23797",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"// postman.setGlobalVariable(\"loginname\",\"zhangs\");",
+											"// postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"// postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"// postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"// postman.setGlobalVariable(\"nickname\",\"张磊123\");"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "621fe951-7e66-4d0e-81b2-5a18926116d7",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"zs\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "登陆名为汉字",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e979d9fc-b493-4c7d-93cc-1189adf23797",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"// postman.setGlobalVariable(\"loginname\",\"zhangs\");",
+											"// postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"// postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"// postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"// postman.setGlobalVariable(\"nickname\",\"张磊123\");"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d60b3ba1-41ec-42fb-b955-9d42bc666afb",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"李小华\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "登陆名为特符字符",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e979d9fc-b493-4c7d-93cc-1189adf23797",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"// postman.setGlobalVariable(\"loginname\",\"zhangs\");",
+											"// postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"// postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"// postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"// postman.setGlobalVariable(\"nickname\",\"张磊123\");"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "68c163c1-cdf3-4d04-932d-03af939ea96c",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"#@！\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码为=",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e979d9fc-b493-4c7d-93cc-1189adf23797",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"// postman.setGlobalVariable(\"loginname\",\"zhangs\");",
+											"// postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"// postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"// postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"// postman.setGlobalVariable(\"nickname\",\"张磊123\");"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "21d4cc3e-46fa-4862-94c3-6872e80ab3a0",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"13607000822\");",
+											"postman.setGlobalVariable(\"password\",\"1=1\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "密码为空",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a04876bf-0ce9-4779-a4e0-737840edbe4c",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"// postman.setGlobalVariable(\"loginname\",\"zhangs\");",
+											"// postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"// postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"// postman.setGlobalVariable(\"email\",\"sjkjs@155.com\");",
+											"// postman.setGlobalVariable(\"nickname\",\"张磊123\");"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "60c77a26-c1dc-478e-ba42-87bd3302014e",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"13607000822\");",
+											"postman.setGlobalVariable(\"password\",\"\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "手机登陆",
+					"description": "",
+					"item": [
+						{
+							"name": "获取验证码",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dc601d6a-1656-444f-9bf2-ce791aacb3a4",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"status is ok\"] = data.data.status === true;",
+											"tests[\"vcode is ok\"] = length(data.data.vscode) === 6;",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"pm.globals.set(\"vcode\", data.data.vcode);"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "460fe6b4-b408-4b52-a2a9-1efd3086d6bb",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneLogin\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode?phone={{phone}}&scene={{scene}}",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"equals": true
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "809c220b-7581-46ec-b918-30bcee5f3e18",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"tests[\"access_token is ok\"] = data.data.access_token.length >0;",
+											"tests[\"loginname is ok\"] = data.data.member.loginname===\"zhangs\"",
+											"tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "771c9b08-c29b-4831-add3-111e6b97e1a3",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"vcode\",pm.globals.get(\"vcode\"));",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "获取验证码",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dc601d6a-1656-444f-9bf2-ce791aacb3a4",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"status is ok\"] = data.data.status === true;",
+											"tests[\"vcode is ok\"] = length(data.data.vscode) === 6;",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"pm.globals.set(\"vcode\", data.data.vcode);"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "460fe6b4-b408-4b52-a2a9-1efd3086d6bb",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneLogin\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode?phone={{phone}}&scene={{scene}}",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"equals": true
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "手机长度不够",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9a6fe3d8-2d6e-4f13-895d-0ef99ccfa0bd",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											"//tests[\"access_token is ok\"] = data.data.access_token.length >0;",
+											"//tests[\"loginname is ok\"] = data.data.member.loginname===\"zhangs\"",
+											"//tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "50aed777-4653-4d56-8d68-9ec1def415f7",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"136\");",
+											"postman.setGlobalVariable(\"vcode\",pm.globals.get(\"vcode\"));",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "获取验证码",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dc601d6a-1656-444f-9bf2-ce791aacb3a4",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"status is ok\"] = data.data.status === true;",
+											"tests[\"vcode is ok\"] = length(data.data.vscode) === 6;",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"pm.globals.set(\"vcode\", data.data.vcode);"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "460fe6b4-b408-4b52-a2a9-1efd3086d6bb",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneLogin\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode?phone={{phone}}&scene={{scene}}",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"equals": true
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "手机长度过长",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9a6fe3d8-2d6e-4f13-895d-0ef99ccfa0bd",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											"//tests[\"access_token is ok\"] = data.data.access_token.length >0;",
+											"//tests[\"loginname is ok\"] = data.data.member.loginname===\"zhangs\"",
+											"//tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "0fc75d54-2662-46a0-be26-c91242b212b2",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13643444444444333\");",
+											"postman.setGlobalVariable(\"vcode\",pm.globals.get(\"vcode\"));",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "获取验证码",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dc601d6a-1656-444f-9bf2-ce791aacb3a4",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"status is ok\"] = data.data.status === true;",
+											"tests[\"vcode is ok\"] = length(data.data.vscode) === 6;",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"pm.globals.set(\"vcode\", data.data.vcode);"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "460fe6b4-b408-4b52-a2a9-1efd3086d6bb",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneLogin\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode?phone={{phone}}&scene={{scene}}",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"equals": true
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "手机号码为汉字",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9a6fe3d8-2d6e-4f13-895d-0ef99ccfa0bd",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											"//tests[\"access_token is ok\"] = data.data.access_token.length >0;",
+											"//tests[\"loginname is ok\"] = data.data.member.loginname===\"zhangs\"",
+											"//tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "242cc884-52bd-458a-bba1-f9b509227969",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\" 的有在\");",
+											"postman.setGlobalVariable(\"vcode\",pm.globals.get(\"vcode\"));",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "获取验证码",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dc601d6a-1656-444f-9bf2-ce791aacb3a4",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"tests[\"status is ok\"] = data.data.status === true;",
+											"tests[\"vcode is ok\"] = length(data.data.vscode) === 6;",
+											"",
+											"",
+											"",
+											"",
+											"",
+											"pm.globals.set(\"vcode\", data.data.vcode);"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "460fe6b4-b408-4b52-a2a9-1efd3086d6bb",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"scene\",\"phoneLogin\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vcode?phone={{phone}}&scene={{scene}}",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vcode"
+									],
+									"query": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"equals": true
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "手机号码为空",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9a6fe3d8-2d6e-4f13-895d-0ef99ccfa0bd",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											"//tests[\"access_token is ok\"] = data.data.access_token.length >0;",
+											"//tests[\"loginname is ok\"] = data.data.member.loginname===\"zhangs\"",
+											"//tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "9476ff33-776a-4f54-9416-cf59a0f9086d",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"\");",
+											"postman.setGlobalVariable(\"vcode\",pm.globals.get(\"vcode\"));",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "无验证码",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9a6fe3d8-2d6e-4f13-895d-0ef99ccfa0bd",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											"//tests[\"access_token is ok\"] = data.data.access_token.length >0;",
+											"//tests[\"loginname is ok\"] = data.data.member.loginname===\"zhangs\"",
+											"//tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b5a8144d-67c0-4d47-bf6e-98f076ef23c9",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"vcode\",\"\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "验证码错误",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9a6fe3d8-2d6e-4f13-895d-0ef99ccfa0bd",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 400\"] = data.code === 400;",
+											"",
+											"//tests[\"access_token is ok\"] = data.data.access_token.length >0;",
+											"//tests[\"loginname is ok\"] = data.data.member.loginname===\"zhangs\"",
+											"//tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4b3589cc-4a22-45f7-b213-8308eef2bcca",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"postman.setGlobalVariable(\"vcode\",\"edds\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "vcode",
+											"value": "{{vcode}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "图片验证码",
+					"description": "",
+					"item": [
+						{
+							"name": "获取验证码图片",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a29faa8a-98d5-4e3b-babf-cd21670b19bf",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"//tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"//tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"//var data = JSON.parse(responseBody);",
+											"//tests[\"code is 200\"] = data.code === 200;",
+											"//tests[\"status is ok\"] = data.data.status === true;",
+											"//tests[\"vcode is ok\"] = length(data.data.vscode) === 6;",
+											"",
+											"tests[\"responseBody is ok\"] = responseBody!==null",
+											"",
+											"",
+											"",
+											"//pm.globals.set(\"vcode\", data.data.vcode);"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "9eceefca-5ef0-4b8a-951d-4d8296281c94",
+										"type": "text/javascript",
+										"exec": [
+											"",
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"//postman.setGlobalVariable(\"phone\",\"13607000822\");",
+											"//postman.setGlobalVariable(\"scene\",\"phoneLogin\");",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "{{phone}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "scene",
+											"value": "{{scene}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/captcha",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"captcha"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "用户信息管理",
+			"description": "",
+			"item": [
+				{
+					"name": "绑定身份证信息",
+					"description": "",
+					"item": [
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2dd11e26-8f8c-4d89-b325-90bb5487e06d",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"tests[\"status is ok\"] = data.data.status===0;",
+											"",
+											"//tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2045abb0-7e24-4cad-93ff-a7bb4b5e756f",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"name\",\"张三\");",
+											"postman.setGlobalVariable(\"identitycardno\",\"360428198309245221\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "{{name}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "identitycardno",
+											"value": "{{identitycardno}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "用户查看个人信息",
+					"description": "",
+					"item": [
+						{
+							"name": "用户登陆获取access_token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "75d76c38-b6e6-4063-aba4-dfb03bdc93be",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"tests[\"access_token is ok\"] = data.data.access_token.length >0;",
+											"tests[\"loginname is ok\"] = data.data.member.loginname===\"zhangs\"",
+											"tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											"",
+											"pm.globals.set(\"access_token\", data.data.access_token+\"\");"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d180bdf7-641c-4088-ab43-f74759fc2b3a",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"loginname\",\"13607000822\");",
+											"postman.setGlobalVariable(\"password\",\"zhangs@123\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "loginname",
+											"value": "{{loginname}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "参数正确",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2dd11e26-8f8c-4d89-b325-90bb5487e06d",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"tests[\"status is ok\"] = data.data.status===0;",
+											"",
+											"//tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2045abb0-7e24-4cad-93ff-a7bb4b5e756f",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"name\",\"张三\");",
+											"postman.setGlobalVariable(\"identitycardno\",\"360428198309245221\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{access_token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "{{name}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "identitycardno",
+											"value": "{{identitycardno}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "无access_token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2dd11e26-8f8c-4d89-b325-90bb5487e06d",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"tests[\"status is ok\"] = data.data.status===0;",
+											"",
+											"//tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2045abb0-7e24-4cad-93ff-a7bb4b5e756f",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"name\",\"张三\");",
+											"postman.setGlobalVariable(\"identitycardno\",\"360428198309245221\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "{{name}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "identitycardno",
+											"value": "{{identitycardno}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "无Authorization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2dd11e26-8f8c-4d89-b325-90bb5487e06d",
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"response code is 200\"] = responseCode.code === 200;",
+											"tests[\"Body matches string code\"] =responseBody.has(\"code\");",
+											"tests[\"Body matches string message\"] =responseBody.has(\"message\");",
+											"var data = JSON.parse(responseBody);",
+											"tests[\"code is 200\"] = data.code === 200;",
+											"",
+											"tests[\"status is ok\"] = data.data.status===0;",
+											"",
+											"//tests[\"phone is ok\"] = data.data.member.phone===\"13607000822\"",
+											"",
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2045abb0-7e24-4cad-93ff-a7bb4b5e756f",
+										"type": "text/javascript",
+										"exec": [
+											"const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;",
+											"",
+											"postman.setGlobalVariable(\"name\",\"张三\");",
+											"postman.setGlobalVariable(\"identitycardno\",\"360428198309245221\");",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "{{name}}",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "identitycardno",
+											"value": "{{identitycardno}}",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://{{ip}}:{{port}}/api/vip/login/name",
+									"protocol": "http",
+									"host": [
+										"{{ip}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"vip",
+										"login",
+										"name"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "用户修改手机号",
+					"description": "",
+					"item": [],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "注册信息验证",
+					"description": "",
+					"item": [],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "用户昵称修改",
+					"description": "",
+					"item": [],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "用户邮箱修改",
+					"description": "",
+					"item": [],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "用户登陆账号修改",
+					"description": "",
+					"item": [],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "修改账号登陆密码",
+					"description": "",
+					"item": [],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "支付管理",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "通行信息管理",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "发票抬头管理",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "用户车辆管理",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "用户通知",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "黑名单",
+			"description": "",
+			"item": []
+		}
+	]
+}
